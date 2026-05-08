@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velusamy Aiyothi | CAD Automation Lead Developer</title>
+  <meta name="description" content="Portfolio of Velusamy Aiyothi — Lead CAD Developer specializing in SolidWorks automation, C#, WPF, and enterprise quality control systems."/>
+  <meta property="og:title" content="Velusamy Aiyothi | CAD Automation Lead Developer"/>
+  <meta property="og:description" content="Lead CAD Developer building enterprise SolidWorks add-ins and automation systems."/>
+  <meta property="og:url" content="https://velusamy-aiyothi.github.io"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Velusamy Aiyothi | CAD Automation Lead Developer"/>
+  <meta name="twitter:description" content="Lead CAD Developer building enterprise SolidWorks add-ins and automation systems."/>
+  <link rel="preconnect" href="https://api.fontshare.com"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=jetbrains-mono@400,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <style>
+    /* ─── DESIGN TOKENS ─── */
+    :root {
+      /* type scale */
+      --text-xs:   clamp(0.65rem,  0.6rem  + 0.25vw, 0.75rem);
+      --text-sm:   clamp(0.8rem,   0.75rem + 0.3vw,  0.9rem);
+      --text-base: clamp(0.9rem,   0.85rem + 0.25vw, 1rem);
+      --text-lg:   clamp(1.1rem,   0.95rem + 0.75vw, 1.4rem);
+      --text-xl:   clamp(1.4rem,   1.1rem  + 1.2vw,  2rem);
+      --text-2xl:  clamp(2.2rem,   1.2rem  + 3vw,    4.4rem);
+      --text-hero: clamp(2.8rem,   1rem    + 6vw,    6.4rem);
+
+      /* 4px spacing */
+      --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.25rem;
+      --s6:1.5rem; --s8:2rem; --s10:2.5rem; --s12:3rem; --s16:4rem;
+      --s20:5rem;  --s24:6rem;
+
+      /* CAD dark theme — deep charcoal with teal + amber accent */
+      --bg:            #0c0e0f;
+      --surface:       #111416;
+      --surface-2:     #161b1d;
+      --surface-3:     #1c2226;
+      --border:        rgba(100,160,170,0.14);
+      --border-bright: rgba(100,160,170,0.32);
+      --text-hi:       #e4eeef;
+      --text-mid:      #8aa4ab;
+      --text-lo:       #4c6570;
+      --teal:          #28cdd8;
+      --teal-dim:      rgba(40,205,216,0.15);
+      --teal-soft:     rgba(40,205,216,0.08);
+      --amber:         #f0a32c;
+      --amber-dim:     rgba(240,163,44,0.15);
+      --success:       #3fd47e;
+      --success-dim:   rgba(63,212,126,0.12);
+      --danger:        #ff5f6d;
+
+      --r-sm:.4rem; --r-md:.75rem; --r-lg:1.1rem; --r-xl:1.6rem; --r-full:9999px;
+      --ease-spring: cubic-bezier(0.16,1,0.3,1);
+      --tr: 220ms var(--ease-spring);
+      --font-display:'Cabinet Grotesk','Inter',sans-serif;
+      --font-body:   'Inter','Helvetica Neue',sans-serif;
+      --font-mono:   'JetBrains Mono','Fira Mono',monospace;
+      --content:1140px;
+      --shadow-card: 0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px var(--border);
+      --shadow-glow-teal: 0 0 32px rgba(40,205,216,0.14);
+    }
+
+    /* ─── RESET ─── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:5rem;}
+    body{
+      min-height:100dvh;
+      font-family:var(--font-body);
+      font-size:var(--text-base);
+      color:var(--text-hi);
+      background:var(--bg);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    img,svg{display:block;max-width:100%;}
+    a{color:inherit;text-decoration:none;}
+    button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;}
+    p{max-width:64ch;color:var(--text-mid);line-height:1.75;}
+    h1,h2,h3,h4{font-family:var(--font-display);line-height:1.06;letter-spacing:-0.03em;color:var(--text-hi);}
+    :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:var(--r-sm);}
+    ::selection{background:rgba(40,205,216,0.22);color:var(--text-hi);}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;}
+
+    /* ─── LAYOUT ─── */
+    .wrap{width:min(calc(100% - 2.4rem),var(--content));margin-inline:auto;}
+    .section{padding-block:clamp(var(--s16),9vw,var(--s24));}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);}
+
+    /* ─── CAD GRID CANVAS ─── */
+    #cad-bg{
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      opacity:1;
+    }
+
+    /* ─── SCANLINE overlay ─── */
+    body::before{
+      content:'';
+      position:fixed;inset:0;z-index:1;pointer-events:none;
+      background:repeating-linear-gradient(0deg,rgba(0,0,0,0.04) 0px,rgba(0,0,0,0.04) 1px,transparent 1px,transparent 3px);
+    }
+
+    /* ─── HEADER ─── */
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px) saturate(1.4);
+      background:rgba(12,14,15,0.88);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-wrap{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:var(--s4);min-height:4.5rem;
+    }
+    .brand{
+      display:inline-flex;align-items:center;gap:var(--s3);
+      font-family:var(--font-display);font-weight:800;font-size:var(--text-sm);
+      letter-spacing:.01em;color:var(--text-hi);
+    }
+    .brand-logo{
+      width:2.6rem;height:2.6rem;flex-shrink:0;
+    }
+    nav ul{display:flex;align-items:center;gap:var(--s5);list-style:none;}
+    nav a{
+      font-size:var(--text-sm);color:var(--text-mid);font-family:var(--font-mono);
+      letter-spacing:.04em;
+      transition:color var(--tr);
+      position:relative;
+    }
+    nav a::after{
+      content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;
+      background:var(--teal);transition:width var(--tr);
+    }
+    nav a:hover,nav a:focus-visible{color:var(--teal);}
+    nav a:hover::after{width:100%;}
+    .nav-right{display:flex;align-items:center;gap:var(--s3);}
+    .hdr-btn{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      padding:.55rem 1.1rem;border-radius:var(--r-full);
+      font-size:var(--text-xs);font-weight:700;font-family:var(--font-mono);
+      letter-spacing:.07em;text-transform:uppercase;
+      border:1px solid var(--border-bright);
+      color:var(--teal);
+      transition:background var(--tr),transform var(--tr),box-shadow var(--tr);
+    }
+    .hdr-btn:hover{background:var(--teal-dim);transform:translateY(-1px);box-shadow:var(--shadow-glow-teal);}
+
+    /* ─── EYEBROW ─── */
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      font-family:var(--font-mono);font-size:var(--text-xs);
+      letter-spacing:.14em;text-transform:uppercase;
+      color:var(--teal);font-weight:700;
+    }
+    .eyebrow::before{
+      content:'//';opacity:.5;font-weight:400;
+    }
+
+    /* ─── HERO ─── */
+    .hero{
+      position:relative;z-index:2;
+      padding-top:clamp(var(--s12),9vw,var(--s20));
+      padding-bottom:clamp(var(--s16),10vw,var(--s24));
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:clamp(var(--s8),5vw,var(--s16));
+      align-items:center;
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      padding:.45rem .9rem;
+      border-radius:var(--r-full);
+      border:1px solid var(--border-bright);
+      background:var(--teal-soft);
+      font-size:var(--text-xs);font-family:var(--font-mono);
+      letter-spacing:.1em;color:var(--teal);text-transform:uppercase;font-weight:700;
+      margin-bottom:var(--s5);
+    }
+    .hero-badge .dot{
+      width:.45rem;height:.45rem;border-radius:50%;background:var(--teal);
+      animation:pulse-dot 2.5s ease infinite;
+    }
+    @keyframes pulse-dot{
+      0%,100%{opacity:1;transform:scale(1);}
+      50%{opacity:.4;transform:scale(.7);}
+    }
+    .hero h1{
+      font-size:var(--text-hero);
+      color:var(--text-hi);
+      max-width:11ch;
+      margin-bottom:var(--s6);
+    }
+    .hero h1 .accent{color:var(--teal);}
+    .hero .lead{
+      font-size:var(--text-lg);
+      color:var(--text-mid);
+      max-width:46ch;
+      margin-bottom:var(--s8);
+      line-height:1.7;
+    }
+    .hero-actions{display:flex;gap:var(--s4);flex-wrap:wrap;}
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      padding:.8rem 1.6rem;border-radius:var(--r-full);
+      background:var(--teal);color:#0a1214;
+      font-size:var(--text-sm);font-weight:700;
+      transition:transform var(--tr),box-shadow var(--tr),filter var(--tr);
+      box-shadow:0 0 24px rgba(40,205,216,.3);
+    }
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 0 36px rgba(40,205,216,.5);}
+    .btn-outline{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      padding:.8rem 1.6rem;border-radius:var(--r-full);
+      border:1px solid var(--border-bright);
+      color:var(--text-mid);
+      font-size:var(--text-sm);font-weight:600;
+      transition:border-color var(--tr),color var(--tr),transform var(--tr),background var(--tr);
+    }
+    .btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);background:var(--teal-soft);}
+    .hero-meta{
+      display:flex;flex-wrap:wrap;gap:var(--s6);
+      margin-top:var(--s10);
+      padding-top:var(--s6);
+      border-top:1px solid var(--border);
+    }
+    .hero-meta-item label{
+      display:block;
+      font-size:var(--text-xs);font-family:var(--font-mono);
+      color:var(--text-lo);letter-spacing:.14em;text-transform:uppercase;
+      margin-bottom:var(--s1);
+    }
+    .hero-meta-item strong{
+      font-size:var(--text-sm);color:var(--text-hi);font-weight:600;
+    }
+
+    /* ─── IDENTITY CARD ─── */
+    .id-card{
+      position:relative;
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:var(--r-xl);
+      padding:clamp(var(--s6),3.5vw,var(--s10));
+      box-shadow:var(--shadow-card),var(--shadow-glow-teal);
+      overflow:hidden;
+    }
+    .id-card::before{
+      content:'';position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse 80% 50% at top left, rgba(40,205,216,.09), transparent),
+        radial-gradient(ellipse 60% 40% at bottom right, rgba(240,163,44,.06), transparent);
+      pointer-events:none;
+    }
+    .id-card-top{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:var(--s6);
+      padding-bottom:var(--s4);
+      border-bottom:1px solid var(--border);
+    }
+    .avatar{
+      width:3.8rem;height:3.8rem;border-radius:1rem;
+      background:linear-gradient(135deg,var(--teal),rgba(40,205,216,.4));
+      display:grid;place-items:center;
+      font-family:var(--font-display);font-size:1.3rem;font-weight:800;
+      color:#0a1214;box-shadow:0 0 20px rgba(40,205,216,.25);
+      letter-spacing:-.03em;
+    }
+    .id-status{
+      display:inline-flex;align-items:center;gap:var(--s2);
+      padding:.4rem .8rem;border-radius:var(--r-full);
+      background:var(--success-dim);
+      border:1px solid rgba(63,212,126,.25);
+      font-family:var(--font-mono);font-size:var(--text-xs);
+      color:var(--success);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    }
+    .id-status .dot{
+      width:.45rem;height:.45rem;border-radius:50%;background:var(--success);
+      animation:pulse-dot 2s ease infinite;
+    }
+    .id-card h2{font-size:var(--text-xl);margin-bottom:var(--s2);}
+    .id-card .role{
+      font-size:var(--text-sm);color:var(--teal);
+      font-family:var(--font-mono);margin-bottom:var(--s5);letter-spacing:.03em;
+    }
+    .id-spec-list{list-style:none;display:grid;gap:var(--s3);margin-top:var(--s5);}
+    .id-spec-list li{
+      display:flex;align-items:flex-start;gap:var(--s3);
+      font-size:var(--text-sm);color:var(--text-mid);
+    }
+    .spec-icon{
+      width:1.8rem;height:1.8rem;flex-shrink:0;
+      display:grid;place-items:center;border-radius:.5rem;
+      border:1px solid var(--border);background:var(--surface-3);color:var(--teal);
+    }
+    .spec-icon svg{width:1rem;height:1rem;}
+
+    /* ─── STATS BAR ─── */
+    .stats-bar{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:var(--s4);
+      margin-top:var(--s10);
+    }
+    .stat{
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      padding:var(--s5);
+      position:relative;overflow:hidden;
+    }
+    .stat::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--teal),transparent);
+    }
+    .stat-num{
+      font-family:var(--font-display);
+      font-size:clamp(2rem,1.5rem+2vw,3rem);
+      font-weight:800;color:var(--teal);
+      line-height:1;margin-bottom:var(--s2);letter-spacing:-.04em;
+    }
+    .stat-label{font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);letter-spacing:.1em;text-transform:uppercase;}
+
+    /* ─── SECTION HEADS ─── */
+    .section-head{margin-bottom:var(--s10);}
+    .section-head h2{font-size:var(--text-2xl);margin-top:var(--s3);margin-bottom:var(--s4);}
+    .section-head p{font-size:var(--text-base);}
+
+    /* ─── CARDS (generic) ─── */
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      padding:clamp(var(--s5),2.5vw,var(--s8));
+      transition:border-color var(--tr),box-shadow var(--tr),transform var(--tr);
+    }
+    .card:hover{border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal);}
+    .card h3{font-size:var(--text-lg);margin-bottom:var(--s3);}
+
+    /* ─── TAG / CHIP ─── */
+    .tag{
+      display:inline-flex;align-items:center;padding:.35rem .75rem;
+      border-radius:var(--r-full);
+      border:1px solid var(--border);
+      background:var(--teal-soft);
+      font-size:var(--text-xs);color:var(--teal);
+      font-family:var(--font-mono);letter-spacing:.05em;font-weight:700;
+    }
+    .tag.amber{border-color:rgba(240,163,44,.25);background:var(--amber-dim);color:var(--amber);}
+    .tag.green{border-color:rgba(63,212,126,.22);background:var(--success-dim);color:var(--success);}
+    .tags{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5);}
+
+    /* ─── PROJECT CARDS ─── */
+    .project-card{
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-radius:var(--r-xl);
+      padding:clamp(var(--s6),3vw,var(--s8));
+      display:flex;flex-direction:column;gap:var(--s6);
+      transition:border-color var(--tr),box-shadow var(--tr),transform var(--tr);
+    }
+    .project-card:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:var(--shadow-glow-teal);}
+    .project-icon{
+      width:3.2rem;height:3.2rem;border-radius:var(--r-md);
+      display:grid;place-items:center;
+      border:1px solid var(--border-bright);
+      background:var(--teal-soft);color:var(--teal);
+    }
+    .project-card h3{font-size:var(--text-lg);margin-bottom:var(--s2);}
+    .project-card p{font-size:var(--text-sm);}
+    .project-bottom{
+      display:flex;align-items:center;justify-content:space-between;
+      padding-top:var(--s4);border-top:1px solid var(--border);
+      margin-top:auto;
+    }
+    .project-type{
+      font-family:var(--font-mono);font-size:var(--text-xs);
+      color:var(--text-lo);letter-spacing:.1em;text-transform:uppercase;
+    }
+
+    /* ─── SKILL CARDS ─── */
+    .skill-icon{
+      width:2.8rem;height:2.8rem;border-radius:var(--r-md);
+      display:grid;place-items:center;
+      color:var(--teal);margin-bottom:var(--s4);
+      background:var(--teal-soft);border:1px solid var(--border-bright);
+    }
+    .skill-bar{
+      height:3px;background:var(--surface-3);border-radius:var(--r-full);
+      margin-top:var(--s4);overflow:hidden;
+    }
+    .skill-bar-fill{
+      height:100%;border-radius:var(--r-full);
+      background:linear-gradient(90deg,var(--teal),rgba(40,205,216,.5));
+      transform-origin:left;transform:scaleX(0);
+      transition:transform 1.2s var(--ease-spring);
+    }
+
+    /* ─── TIMELINE ─── */
+    .timeline{display:grid;gap:var(--s5);}
+    .tl-card{
+      background:var(--surface-2);
+      border:1px solid var(--border);
+      border-left:3px solid var(--teal);
+      border-radius:0 var(--r-lg) var(--r-lg) 0;
+      padding:clamp(var(--s5),3vw,var(--s8));
+      position:relative;
+    }
+    .tl-meta{
+      display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;
+      font-family:var(--font-mono);font-size:var(--text-xs);color:var(--text-lo);
+      text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--s3);
+    }
+    .tl-company{color:var(--amber);}
+    .tl-card h3{font-size:var(--text-lg);margin-bottom:var(--s3);}
+
+    /* ─── CODE BLOCK accent ─── */
+    .code-accent{
+      font-family:var(--font-mono);font-size:var(--text-xs);
+      background:var(--surface-3);
+      border:1px solid var(--border);
+      border-radius:var(--r-md);
+      padding:var(--s4) var(--s5);
+      color:var(--text-mid);
+      overflow-x:auto;
+      line-height:1.8;
+    }
+    .code-accent .k{color:var(--teal);}
+    .code-accent .s{color:var(--amber);}
+    .code-accent .c{color:var(--text-lo);}
+    .code-accent .t{color:#b48ead;}
+
+    /* ─── CONTACT ─── */
+    .contact-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;
+      gap:var(--s8);align-items:start;
+    }
+    .contact-link{
+      display:flex;align-items:center;gap:var(--s4);
+      padding:var(--s4) var(--s5);
+      border:1px solid var(--border);border-radius:var(--r-lg);
+      transition:border-color var(--tr),background var(--tr),transform var(--tr);
+      background:var(--surface-2);
+    }
+    .contact-link:hover{border-color:var(--border-bright);background:var(--teal-soft);transform:translateX(4px);}
+    .contact-link-icon{
+      width:2.8rem;height:2.8rem;flex-shrink:0;
+      display:grid;place-items:center;border-radius:var(--r-md);
+      background:var(--teal-soft);border:1px solid var(--border-bright);color:var(--teal);
+    }
+    .contact-link-label{font-size:var(--text-sm);color:var(--text-hi);font-weight:600;}
+    .contact-link-sub{font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);}
+
+    /* ─── FOOTER ─── */
+    footer{
+      padding-block:var(--s8);
+      border-top:1px solid var(--border);
+      font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);
+    }
+    .footer-wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;}
+
+    /* ─── DIVIDER ─── */
+    .divider{height:1px;background:var(--border);margin-block:0;}
+
+    /* ─── SCROLL REVEALS ─── */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease-spring),transform .7s var(--ease-spring);}
+    .reveal.visible{opacity:1;transform:none;}
+    .reveal-fast{transition-duration:.45s;}
+    .reveal-slow{transition-duration:1.1s;}
+    [data-delay="1"]{transition-delay:.1s;}
+    [data-delay="2"]{transition-delay:.2s;}
+    [data-delay="3"]{transition-delay:.3s;}
+    [data-delay="4"]{transition-delay:.4s;}
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1024px){
+      .hero-grid{grid-template-columns:1fr;}
+      .id-card{max-width:42rem;}
+      .stats-bar{grid-template-columns:1fr 1fr;}
+      .grid-4{grid-template-columns:1fr 1fr;}
+      .nav-wrap{flex-wrap:wrap;padding-block:var(--s3);}
+      nav{order:3;width:100%;}
+      nav ul{gap:var(--s4);}
+      .contact-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:700px){
+      .grid-2,.grid-3{grid-template-columns:1fr;}
+      .stats-bar{grid-template-columns:1fr 1fr;}
+      .hero-actions{flex-direction:column;}
+      .btn-primary,.btn-outline{justify-content:center;}
+      .hero h1{max-width:14ch;}
+      nav ul{overflow-x:auto;padding-bottom:var(--s2);}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- CAD grid canvas -->
+<canvas id="cad-bg" aria-hidden="true"></canvas>
+
+<!-- Skip link -->
+<a href="#main" style="position:absolute;top:-40px;left:1rem;background:var(--teal);color:#0a1214;padding:.5rem 1rem;border-radius:var(--r-sm);z-index:100;font-weight:700;font-size:var(--text-sm);" onfocus="this.style.top='1rem'" onblur="this.style.top='-40px'">Skip to content</a>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" role="banner">
+  <div class="wrap nav-wrap">
+    <a class="brand" href="#home" aria-label="Velusamy Aiyothi — home">
+      <svg class="brand-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="rgba(40,205,216,0.1)" stroke="rgba(40,205,216,0.3)" stroke-width="1"/>
+        <path d="M9 29L18.5 11H22L13 29H9Z" fill="#28cdd8"/>
+        <path d="M22 11H31L22.2 29H17.5L22 20.4H18.3L22 11Z" fill="#28cdd8" opacity="0.65"/>
+        <line x1="4" y1="20" x2="8" y2="20" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
+        <line x1="32" y1="20" x2="36" y2="20" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
+        <line x1="20" y1="4" x2="20" y2="8" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
+        <line x1="20" y1="32" x2="20" y2="36" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
+      </svg>
+      <span>Velusamy Aiyothi</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a class="hdr-btn" href="https://www.linkedin.com/in/velusamy-ayothi-2b03a1184" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="linkedin" style="width:14px;height:14px;" aria-hidden="true"></i>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main id="main" style="position:relative;z-index:2;">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Available · Lead CAD Developer · Chennai
+        </div>
+        <h1>
+          CAD automation<br>that <span class="accent">engineers</span><br>can trust.
+        </h1>
+        <p class="lead">I build SolidWorks add-ins, quality control workflows, and enterprise desktop tools that turn complex CAD validation into reliable, fast software products.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contact">
+            <i data-lucide="send" style="width:16px;height:16px;" aria-hidden="true"></i>
+            Start a conversation
+          </a>
+          <a class="btn-outline" href="#work">
+            <i data-lucide="layers" style="width:16px;height:16px;" aria-hidden="true"></i>
+            View my work
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><label>Role</label><strong>Technical Lead</strong></div>
+          <div class="hero-meta-item"><label>Company</label><strong>Sedin Technologies</strong></div>
+          <div class="hero-meta-item"><label>Stack</label><strong>C# · WPF · SW API</strong></div>
+          <div class="hero-meta-item"><label>Experience</label><strong>9+ years</strong></div>
+        </div>
+      </div>
+
+      <!-- identity card -->
+      <aside class="id-card reveal reveal-slow" aria-label="Profile card">
+        <div class="id-card-top">
+          <div class="avatar" aria-hidden="true">VA</div>
+          <span class="id-status">
+            <span class="dot" aria-hidden="true"></span>
+            Active
+          </span>
+        </div>
+        <h2>Velusamy Aiyothi</h2>
+        <p class="role">// Lead CAD Developer &amp; Automation Engineer</p>
+        <p style="font-size:var(--text-sm);">Building enterprise-grade SolidWorks products with deep CAD API knowledge and production-focused C# and WPF software engineering.</p>
+        <ul class="id-spec-list">
+          <li>
+            <span class="spec-icon"><i data-lucide="cpu" aria-hidden="true"></i></span>
+            SolidWorks API — add-ins,assembly, part & drawing automation, BOM workflows
+          </li>
+          <li>
+            <span class="spec-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
+            WPF / MVVM desktop products with MahApps.Metro theming
+          </li>
+          <li>
+            <span class="spec-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span>
+            AI-Driven Data Exchange, GD&amp;T
+          </li>
+          <li>
+            <span class="spec-icon"><i data-lucide="terminal" aria-hidden="true"></i></span>
+            C# .NET, multi-project architectures, batch processing systems
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- stats bar -->
+    <div class="wrap stats-bar" role="list" aria-label="Key statistics">
+      <article class="stat reveal" data-delay="1" role="listitem">
+        <div class="stat-num">9+</div>
+        <div class="stat-label">Years in CAD software</div>
+      </article>
+      <article class="stat reveal" data-delay="2" role="listitem">
+        <div class="stat-num">C#</div>
+        <div class="stat-label">Primary language</div>
+      </article>
+      <article class="stat reveal" data-delay="3" role="listitem">
+        <div class="stat-num">WPF</div>
+        <div class="stat-label">Desktop UI stack</div>
+      </article>
+      <article class="stat reveal" data-delay="4" role="listitem">
+        <div class="stat-num">CAD APIs</div>
+        <div class="stat-label">Solidworks - Inventor -  AutoCad  - Rhino</div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">About</span>
+        <h2>Built at the edge of mechanical design and software engineering.</h2>
+        <p>I focus on the intersection where real engineering requirements meet scalable software. My work has always been about making CAD-dependent teams faster, more confident, and better supported by the tools they rely on.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card reveal" data-delay="1">
+          <h3>My approach</h3>
+          <p>I treat every CAD automation project as a product problem: understanding the user's workflow first, then designing solutions that reduce manual work without creating new friction.</p>
+          <ul style="list-style:none;display:grid;gap:var(--s4);margin-top:var(--s6);">
+            <li style="display:flex;align-items:flex-start;gap:var(--s3);">
+              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <div>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Domain-first thinking</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Understanding CAD workflows deeply before writing any code.</p>
+              </div>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:var(--s3);">
+              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <div>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Commercial-grade delivery</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Architecture, UI quality, reliability, and real-world edge cases — all matter.</p>
+              </div>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:var(--s3);">
+              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <div>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Persistence on hard problems</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Complex API bugs, unstable states, and edge cases are where I'm most effective.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <div style="display:grid;gap:var(--s5);">
+          <article class="card reveal" data-delay="2">
+            <h3>Core specializations</h3>
+            <div class="tags">
+              <span class="tag">SolidWorks API</span>
+              <span class="tag">Inventor API</span>
+              <span class="tag">AutoCAD API</span>
+              <span class="tag">Rhino API</span>
+              <span class="tag">Quality control</span>
+              <span class="tag">Assembly - Part - Drawing Automation</span>
+              <span class="tag amber">WPF / XAML</span>
+              <span class="tag amber">MVVM</span>
+              <span class="tag amber">C# .NET</span>
+              <span class="tag green">Batch processing</span>
+              <span class="tag green">Changemanagement</span>
+              <span class="tag green">GD&amp;T validation</span>
+              <span class="tag green">MahApps.Metro</span>
+            </div>
+          </article>
+          <article class="card reveal" data-delay="3">
+  <h3>Code snapshot</h3>
+  <pre class="code-accent"><code><span class="c">// SOLIDWORKS AI Automate Add-In</span>
+
+<span class="k">[Title</span>(<span class="s">"SW Add-In"</span>)] 
+<span class="k">[Description</span>(<span class="s">"Sample 'AI Automate' SOLIDWORKS add-in"</span>)] 
+<span class="k">[ComVisible</span>(<span class="k">true</span>), <span class="k">Guid</span>(<span class="s">"31B803E0-7A01-4841-A0DE-895B726625C9"</span>)]
+<span class="k">public class</span> <span class="t">MySampleAddIn</span> : <span class="t">SwAddInEx</span>
+{
+    <span class="k">public override void</span> <span class="m">OnConnect</span>()
+    {
+        <span class="t">Application</span>.<span class="m">ShowMessageBox</span>(<span class="s">"AI Automate!"</span>);
+    }
+}</code></pre>
+</article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Selected work</span>
+        <h2>Systems designed for scale, precision, and usability.</h2>
+        <p>A selection of the types of tools and systems I build — each solving a real engineering workflow problem with reliable, maintainable software.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="project-card reveal" data-delay="1">
+          <header>
+            <div class="project-icon" aria-hidden="true">
+              <i data-lucide="shield-check" style="width:1.4rem;height:1.4rem;"></i>
+            </div>
+            <h3>Enterprise Features platform</h3>
+            <p>Real-time validation for SolidWorks parts, assemblies, and drawings Exclusion Simplification Options, Metadata Information.</p>
+          </header>
+          <div>
+            <div class="tags">
+              <span class="tag">SolidWorks API</span>
+              <span class="tag">C# .NET</span>
+              <span class="tag amber">WPF</span>
+            </div>
+            <div class="project-bottom">
+              <span class="project-type">Desktop Add-in</span>
+              <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="2">
+          <header>
+            <div class="project-icon" aria-hidden="true">
+              <i data-lucide="file-cog" style="width:1.4rem;height:1.4rem;"></i>
+            </div>
+            <h3>Drawing &amp; BOM automation</h3>
+            <p>Automated drawing generation and BOM extraction workflows. Eliminates repetitive drafting, enforces standards, and outputs consistent documentation across model sets.</p>
+          </header>
+          <div>
+            <div class="tags">
+              <span class="tag">Drawing API</span>
+              <span class="tag">BOM workflows</span>
+              <span class="tag green">Automation</span>
+            </div>
+            <div class="project-bottom">
+              <span class="project-type">CAD Automation</span>
+              <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="3">
+          <header>
+            <div class="project-icon" aria-hidden="true">
+              <i data-lucide="server" style="width:1.4rem;height:1.4rem;"></i>
+            </div>
+            <h3>Batch validation pipeline</h3>
+            <p>Multi-file processing system that runs quality checks at scale across project libraries. Surfaces issues fast with structured output and supports large dataset review without manual intervention.</p>
+          </header>
+          <div>
+            <div class="tags">
+              <span class="tag">Batch processing</span>
+              <span class="tag amber">Pipeline design</span>
+              <span class="tag green">File validation</span>
+            </div>
+            <div class="project-bottom">
+              <span class="project-type">Processing System</span>
+              <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Technical skills</span>
+        <h2>Deep specialization across CAD and desktop engineering.</h2>
+        <p>I am strongest at the intersection of CAD domain knowledge, Windows desktop architecture, and real-world QC automation engineering.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card reveal skill-card-item" data-delay="1" data-fill="0.95">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="box" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>SolidWorks API</h3>
+          <p style="font-size:var(--text-sm);">Add-in development, model traversal, drawing intelligence, configuration automation, and custom property workflows.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="SolidWorks API proficiency 95%">
+            <div class="skill-bar-fill" style="width:95%;"></div>
+          </div>
+        </article>
+
+        <article class="card reveal skill-card-item" data-delay="2" data-fill="0.93">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="code-2" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>C# / .NET</h3>
+          <p style="font-size:var(--text-sm);">Object-oriented architecture, async patterns, multi-project solutions, service layers, and production-quality Windows application delivery.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="C# .NET proficiency 93%">
+            <div class="skill-bar-fill" style="width:93%;"></div>
+          </div>
+        </article>
+
+        <article class="card reveal skill-card-item" data-delay="3" data-fill="0.90">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="layout" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>WPF / XAML</h3>
+          <p style="font-size:var(--text-sm);">Rich desktop UI with MVVM patterns, custom controls, MahApps.Metro theming, data binding, and state management for complex CAD workflows.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="WPF / XAML proficiency 90%">
+            <div class="skill-bar-fill" style="width:90%;"></div>
+          </div>
+        </article>
+
+        <article class="card reveal skill-card-item" data-delay="1" data-fill="0.92">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="shield" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>CAD Automation</h3>
+          <p style="font-size:var(--text-sm);">Designing and building automation engines for SolidWorks parts, assemblies, and drawings — including QC rules, GD&amp;T validation, and custom property workflows.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="QC automation proficiency 92%">
+            <div class="skill-bar-fill" style="width:92%;"></div>
+          </div>
+        </article>
+
+        <article class="card reveal skill-card-item" data-delay="2" data-fill="0.85">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="git-merge" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>Enterprise architecture</h3>
+          <p style="font-size:var(--text-sm);">Multi-project solution design, dependency injection, service patterns, license system integration, and extensible plugin frameworks.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Enterprise architecture proficiency 85%">
+            <div class="skill-bar-fill" style="width:85%;"></div>
+          </div>
+        </article>
+
+        <article class="card reveal skill-card-item" data-delay="3" data-fill="0.80">
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="database" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>Batch &amp; workflow systems</h3>
+          <p style="font-size:var(--text-sm);">Automated multi-file CAD processing, result aggregation, PDF export pipelines, and reporting systems for QC validation at scale.</p>
+          <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Batch systems proficiency 80%">
+            <div class="skill-bar-fill" style="width:80%;"></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Experience</span>
+        <h2>From implementation specialist to technical lead.</h2>
+        <p>Consistent growth in CAD specialization, product ownership, and architectural responsibility across two companies and 9+ years.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="tl-card reveal" data-delay="1">
+          <div class="tl-meta">
+            <span>Mar 2026 — Present</span>
+            <span class="tl-company">Sedin Technologies</span>
+          </div>
+          <h3>Lead CAD Developer</h3>
+          <p style="font-size:var(--text-sm);">Leading end-to-end CAD automation product development — from architecture and SolidWorks API integration to WPF UI delivery and QC workflow design. Responsible for technical direction, implementation quality, and stakeholder collaboration on enterprise engineering tooling.</p>
+          <div class="tags" style="margin-top:var(--s5);">
+            <span class="tag">SolidWorks add-ins</span>
+            <span class="tag amber">Technical lead</span>
+            <span class="tag green">Enterprise delivery</span>
+            <span class="tag">C# architecture</span>
+          </div>
+        </article>
+
+        <article class="tl-card reveal" data-delay="2">
+          <div class="tl-meta">
+            <span>Dec 2017 — Mar 2026 </span>
+            <span class="tl-company">Srinsoft Inc, </span>
+          </div>
+          <h3>Associate Technical lead</h3>
+          <p style="font-size:var(--text-sm);">Built solid foundations in CAD API customization, add-in development, and Windows desktop workflows. Grew from implementation contributor to lead developer on multiple engineering automation projects.</p>
+          <div class="tags" style="margin-top:var(--s5);">
+            <span class="tag">CAD customization</span>
+            <span class="tag amber">WPF UI</span>
+            <span class="tag green">Process automation</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head reveal" style="margin-bottom:0;">
+          <span class="eyebrow">Contact</span>
+          <h2>Open to the right CAD automation opportunity.</h2>
+          <p>Whether it's a new SolidWorks product, a quality control framework, a complex add-in, or just a conversation about engineering automation — I'm interested. Let's talk.</p>
+          <div style="margin-top:var(--s8);display:grid;gap:var(--s4);">
+            <a class="contact-link" href="mailto:velusamyaiyothi@gmail.com">
+              <span class="contact-link-icon">
+                <i data-lucide="mail" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i>
+              </span>
+              <div>
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-sub">velusamyaiyothi@gmail.com</div>
+              </div>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/velusamy-ayothi-2b03a1184" target="_blank" rel="noopener noreferrer">
+              <span class="contact-link-icon"><i data-lucide="linkedin" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i></span>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-sub">linkedin.com/in/velusamy-ayothi-2b03a1184</div>
+              </div>
+              <i data-lucide="arrow-right" style="color:var(--teal);width:1rem;height:1rem;margin-left:auto;" aria-hidden="true"></i>
+            </a>
+          
+            <a class="contact-link" href="#home">
+              <span class="contact-link-icon"><i data-lucide="map-pin" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i></span>
+              <div>
+                <div class="contact-link-label">Location</div>
+                <div class="contact-link-sub">Chennai, Tamil Nadu, India</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <article class="card reveal reveal-slow" style="background:var(--surface-2);border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal);">
+        <h3>Available for</h3>
+        <ul style="list-style:none;display:grid;gap:var(--s4);margin-top:var(--s4);">
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
+            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+            Full-time lead CAD developer roles
+          </li>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
+            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+            Enterprise SolidWorks add-in projects
+          </li>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
+            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+            CAD quality control platform development
+          </li>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
+            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+            WPF desktop engineering tools
+          </li>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
+            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+            Multi-CAD platform automation (Inventor, AutoCAD)
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-wrap">
+    <span>// Velusamy Aiyothi · Lead CAD Developer · Chennai, India</span>
+    <a href="https://www.linkedin.com/in/velusamy-ayothi-2b03a1184" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">linkedin.com/in/velusamy-ayothi</a>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script>
+  /* Init Lucide icons */
+  document.addEventListener('DOMContentLoaded', () => { if(window.lucide) lucide.createIcons(); });
+
+  /* CAD grid canvas background */
+  (function(){
+    const canvas = document.getElementById('cad-bg');
+    const ctx = canvas.getContext('2d');
+    let W, H, animId;
+
+    const MAJOR = 80;
+    const MINOR = 20;
+    const TEAL = 'rgba(40,205,216,';
+    const AMBER = 'rgba(240,163,44,';
+
+    function resize(){
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    /* animated scan */
+    let scanY = 0;
+    let t = 0;
+
+    function drawGrid(){
+      ctx.clearRect(0,0,W,H);
+
+      /* minor grid */
+      ctx.strokeStyle = TEAL+'0.045)';
+      ctx.lineWidth = .5;
+      for(let x=0;x<W;x+=MINOR){
+        ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
+      }
+      for(let y=0;y<H;y+=MINOR){
+        ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+      }
+
+      /* major grid */
+      ctx.strokeStyle = TEAL+'0.09)';
+      ctx.lineWidth = .8;
+      for(let x=0;x<W;x+=MAJOR){
+        ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
+      }
+      for(let y=0;y<H;y+=MAJOR){
+        ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+      }
+
+      /* crosshair markers at major intersections */
+      ctx.strokeStyle = TEAL+'0.18)';
+      ctx.lineWidth = 1;
+      for(let x=MAJOR;x<W;x+=MAJOR){
+        for(let y=MAJOR;y<H;y+=MAJOR){
+          const sz = 5;
+          ctx.beginPath();ctx.moveTo(x-sz,y);ctx.lineTo(x+sz,y);ctx.stroke();
+          ctx.beginPath();ctx.moveTo(x,y-sz);ctx.lineTo(x,y+sz);ctx.stroke();
+        }
+      }
+
+      /* dot corners */
+      ctx.fillStyle = TEAL+'0.22)';
+      for(let x=MAJOR;x<W;x+=MAJOR){
+        for(let y=MAJOR;y<H;y+=MAJOR){
+          ctx.beginPath();ctx.arc(x,y,1.5,0,Math.PI*2);ctx.fill();
+        }
+      }
+
+      /* animated scan line */
+      const scanGrad = ctx.createLinearGradient(0,scanY-80,0,scanY+80);
+      scanGrad.addColorStop(0,'rgba(40,205,216,0)');
+      scanGrad.addColorStop(.5,'rgba(40,205,216,0.05)');
+      scanGrad.addColorStop(1,'rgba(40,205,216,0)');
+      ctx.fillStyle = scanGrad;
+      ctx.fillRect(0,scanY-80,W,160);
+
+      /* horizontal scan line */
+      ctx.strokeStyle = TEAL+'0.25)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();ctx.moveTo(0,scanY);ctx.lineTo(W,scanY);ctx.stroke();
+
+      /* corner decorations */
+      drawCorner(40,40,1,1,TEAL);
+      drawCorner(W-40,40,-1,1,TEAL);
+      drawCorner(40,H-40,1,-1,AMBER);
+      drawCorner(W-40,H-40,-1,-1,AMBER);
+
+      scanY = (scanY + .4) % H;
+      t++;
+    }
+
+    function drawCorner(x,y,sx,sy,col){
+      const L = 24;
+      ctx.strokeStyle = col+'0.5)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();ctx.moveTo(x,y+sy*L);ctx.lineTo(x,y);ctx.lineTo(x+sx*L,y);ctx.stroke();
+      ctx.fillStyle = col+'0.7)';
+      ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
+    }
+
+    function loop(){
+      drawGrid();
+      animId = requestAnimationFrame(loop);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    loop();
+  })();
+
+  /* Scroll reveal */
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    },{threshold:.12});
+    els.forEach(el=>obs.observe(el));
+  })();
+
+  /* Skill bar animation on scroll */
+  (function(){
+    const bars = document.querySelectorAll('.skill-bar-fill');
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.transform = 'scaleX(1)';
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:.4});
+    bars.forEach(b=>obs.observe(b));
+  })();
+</script>
+</body>
+</html>
