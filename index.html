@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Velusamy Aiyothi | CAD Automation Lead Developer</title>
-  <meta name="description" content="Portfolio of Velusamy Aiyothi — Lead CAD Developer specializing in SolidWorks automation, C#, WPF, and enterprise quality control systems."/>
-  <meta property="og:title" content="Velusamy Aiyothi | CAD Automation Lead Developer"/>
-  <meta property="og:description" content="Lead CAD Developer building enterprise SolidWorks add-ins and automation systems."/>
+  <title>Velusamy Aiyothi | Advanced CAD Automation</title>
+  <meta name="description" content="Portfolio of Velusamy Aiyothi — Lead CAD Developer bridging traditional CAD APIs and modern AI toolsets."/>
+  <meta property="og:title" content="Velusamy Aiyothi | Intelligent CAD Automation"/>
+  <meta property="og:description" content="Lead CAD Developer building enterprise SolidWorks add-ins and intelligent data pipelines."/>
   <meta property="og:url" content="https://velusamy-aiyothi.github.io"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Velusamy Aiyothi | CAD Automation Lead Developer"/>
-  <meta name="twitter:description" content="Lead CAD Developer building enterprise SolidWorks add-ins and automation systems."/>
   <link rel="preconnect" href="https://api.fontshare.com"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -19,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet"/>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
   <style>
-    /* ─── DESIGN TOKENS ─── */
+    /* ─── ADVANCED AI DESIGN TOKENS ─── */
     :root {
       /* type scale */
       --text-xs:   clamp(0.65rem,  0.6rem  + 0.25vw, 0.75rem);
@@ -30,29 +28,35 @@
       --text-2xl:  clamp(2.2rem,   1.2rem  + 3vw,    4.4rem);
       --text-hero: clamp(2.8rem,   1rem    + 6vw,    6.4rem);
 
-      /* 4px spacing */
+      /* spacing */
       --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.25rem;
       --s6:1.5rem; --s8:2rem; --s10:2.5rem; --s12:3rem; --s16:4rem;
       --s20:5rem;  --s24:6rem;
 
-      /* CAD dark theme — deep charcoal with teal + amber accent */
-      --bg:            #0c0e0f;
-      --surface:       #111416;
-      --surface-2:     #161b1d;
-      --surface-3:     #1c2226;
-      --border:        rgba(100,160,170,0.14);
-      --border-bright: rgba(100,160,170,0.32);
-      --text-hi:       #e4eeef;
-      --text-mid:      #8aa4ab;
-      --text-lo:       #4c6570;
-      --teal:          #28cdd8;
-      --teal-dim:      rgba(40,205,216,0.15);
-      --teal-soft:     rgba(40,205,216,0.08);
-      --amber:         #f0a32c;
-      --amber-dim:     rgba(240,163,44,0.15);
-      --success:       #3fd47e;
-      --success-dim:   rgba(63,212,126,0.12);
-      --danger:        #ff5f6d;
+      /* Deep Cyber Void Theme */
+      --bg:            #020203;
+      --surface:       rgba(10, 11, 16, 0.6);
+      --surface-2:     rgba(16, 18, 26, 0.7);
+      --surface-3:     rgba(24, 27, 38, 0.8);
+      --border:        rgba(0, 240, 255, 0.2);
+      --border-bright: rgba(0, 240, 255, 0.5);
+      --text-hi:       #ffffff;
+      --text-mid:      #a2b2c9;
+      --text-lo:       #586a86;
+      
+      /* Glowing Neon Cyan */
+      --teal:          #00f0ff;
+      --teal-dim:      rgba(0, 240, 255, 0.15);
+      --teal-soft:     rgba(0, 240, 255, 0.05);
+      
+      /* Synthwave Purple */
+      --amber:         #d946ef;
+      --amber-dim:     rgba(217, 70, 239, 0.15);
+      
+      /* Matrix Green */
+      --success:       #10b981;
+      --success-dim:   rgba(16, 185, 129, 0.15);
+      --danger:        #f43f5e;
 
       --r-sm:.4rem; --r-md:.75rem; --r-lg:1.1rem; --r-xl:1.6rem; --r-full:9999px;
       --ease-spring: cubic-bezier(0.16,1,0.3,1);
@@ -61,8 +65,12 @@
       --font-body:   'Inter','Helvetica Neue',sans-serif;
       --font-mono:   'JetBrains Mono','Fira Mono',monospace;
       --content:1140px;
-      --shadow-card: 0 2px 8px rgba(0,0,0,0.5), 0 0 0 1px var(--border);
-      --shadow-glow-teal: 0 0 32px rgba(40,205,216,0.14);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.9);
+      --shadow-glow-teal: 0 0 25px rgba(0, 240, 255, 0.2);
+      --shadow-glow-purple: 0 0 25px rgba(217, 70, 239, 0.2);
+      
+      /* Glassmorphism blur */
+      --glass-blur: blur(12px);
     }
 
     /* ─── RESET ─── */
@@ -83,7 +91,7 @@
     p{max-width:64ch;color:var(--text-mid);line-height:1.75;}
     h1,h2,h3,h4{font-family:var(--font-display);line-height:1.06;letter-spacing:-0.03em;color:var(--text-hi);}
     :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:var(--r-sm);}
-    ::selection{background:rgba(40,205,216,0.22);color:var(--text-hi);}
+    ::selection{background:rgba(0, 240, 255, 0.3);color:var(--text-hi);}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;}
 
     /* ─── LAYOUT ─── */
@@ -103,14 +111,14 @@
     body::before{
       content:'';
       position:fixed;inset:0;z-index:1;pointer-events:none;
-      background:repeating-linear-gradient(0deg,rgba(0,0,0,0.04) 0px,rgba(0,0,0,0.04) 1px,transparent 1px,transparent 3px);
+      background:repeating-linear-gradient(0deg,rgba(0,0,0,0.1) 0px,rgba(0,0,0,0.1) 1px,transparent 1px,transparent 3px);
     }
 
     /* ─── HEADER ─── */
     .site-header{
       position:sticky;top:0;z-index:50;
-      backdrop-filter:blur(18px) saturate(1.4);
-      background:rgba(12,14,15,0.88);
+      backdrop-filter: blur(20px) saturate(1.5);
+      background:rgba(2, 2, 3, 0.7);
       border-bottom:1px solid var(--border);
     }
     .nav-wrap{
@@ -121,6 +129,7 @@
       display:inline-flex;align-items:center;gap:var(--s3);
       font-family:var(--font-display);font-weight:800;font-size:var(--text-sm);
       letter-spacing:.01em;color:var(--text-hi);
+      text-shadow: 0 0 10px rgba(0,240,255,0.4);
     }
     .brand-logo{
       width:2.6rem;height:2.6rem;flex-shrink:0;
@@ -129,14 +138,15 @@
     nav a{
       font-size:var(--text-sm);color:var(--text-mid);font-family:var(--font-mono);
       letter-spacing:.04em;
-      transition:color var(--tr);
+      transition:color var(--tr), text-shadow var(--tr);
       position:relative;
     }
     nav a::after{
       content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;
       background:var(--teal);transition:width var(--tr);
+      box-shadow: 0 0 8px var(--teal);
     }
-    nav a:hover,nav a:focus-visible{color:var(--teal);}
+    nav a:hover,nav a:focus-visible{color:var(--teal); text-shadow: 0 0 8px var(--teal-dim);}
     nav a:hover::after{width:100%;}
     .nav-right{display:flex;align-items:center;gap:var(--s3);}
     .hdr-btn{
@@ -146,9 +156,11 @@
       letter-spacing:.07em;text-transform:uppercase;
       border:1px solid var(--border-bright);
       color:var(--teal);
-      transition:background var(--tr),transform var(--tr),box-shadow var(--tr);
+      background: rgba(0, 240, 255, 0.05);
+      backdrop-filter: var(--glass-blur);
+      transition:all var(--tr);
     }
-    .hdr-btn:hover{background:var(--teal-dim);transform:translateY(-1px);box-shadow:var(--shadow-glow-teal);}
+    .hdr-btn:hover{background:var(--teal-dim);transform:translateY(-1px);box-shadow:var(--shadow-glow-teal); border-color: var(--teal);}
 
     /* ─── EYEBROW ─── */
     .eyebrow{
@@ -156,9 +168,30 @@
       font-family:var(--font-mono);font-size:var(--text-xs);
       letter-spacing:.14em;text-transform:uppercase;
       color:var(--teal);font-weight:700;
+      text-shadow: 0 0 10px rgba(0,240,255,0.3);
     }
     .eyebrow::before{
-      content:'//';opacity:.5;font-weight:400;
+      content:'>_';opacity:1;font-weight:700; color:var(--amber);
+    }
+
+    /* ─── AI TYPING EFFECT ─── */
+    .typing-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid var(--teal);
+      animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+      max-width: 100%;
+      vertical-align: bottom;
+      text-shadow: 0 0 20px rgba(0,240,255,0.5);
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--teal); box-shadow: 2px 0 10px var(--teal); }
     }
 
     /* ─── HERO ─── */
@@ -178,13 +211,16 @@
       padding:.45rem .9rem;
       border-radius:var(--r-full);
       border:1px solid var(--border-bright);
-      background:var(--teal-soft);
+      background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
       font-size:var(--text-xs);font-family:var(--font-mono);
       letter-spacing:.1em;color:var(--teal);text-transform:uppercase;font-weight:700;
       margin-bottom:var(--s5);
+      box-shadow: 0 0 15px rgba(0,240,255,0.1);
     }
     .hero-badge .dot{
-      width:.45rem;height:.45rem;border-radius:50%;background:var(--teal);
+      width:.45rem;height:.45rem;border-radius:50%;background:var(--success);
+      box-shadow: 0 0 8px var(--success);
       animation:pulse-dot 2.5s ease infinite;
     }
     @keyframes pulse-dot{
@@ -194,7 +230,7 @@
     .hero h1{
       font-size:var(--text-hero);
       color:var(--text-hi);
-      max-width:11ch;
+      max-width:14ch;
       margin-bottom:var(--s6);
     }
     .hero h1 .accent{color:var(--teal);}
@@ -209,21 +245,23 @@
     .btn-primary{
       display:inline-flex;align-items:center;gap:var(--s2);
       padding:.8rem 1.6rem;border-radius:var(--r-full);
-      background:var(--teal);color:#0a1214;
-      font-size:var(--text-sm);font-weight:700;
+      background:var(--teal);color:#020203;
+      font-size:var(--text-sm);font-weight:800;
       transition:transform var(--tr),box-shadow var(--tr),filter var(--tr);
-      box-shadow:0 0 24px rgba(40,205,216,.3);
+      box-shadow:0 0 24px rgba(0,240,255,.4);
     }
-    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 0 36px rgba(40,205,216,.5);}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.2);box-shadow:0 0 36px rgba(0,240,255,.6);}
     .btn-outline{
       display:inline-flex;align-items:center;gap:var(--s2);
       padding:.8rem 1.6rem;border-radius:var(--r-full);
       border:1px solid var(--border-bright);
-      color:var(--text-mid);
+      color:var(--text-hi);
+      background: rgba(0,240,255,0.05);
+      backdrop-filter: var(--glass-blur);
       font-size:var(--text-sm);font-weight:600;
-      transition:border-color var(--tr),color var(--tr),transform var(--tr),background var(--tr);
+      transition:all var(--tr);
     }
-    .btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);background:var(--teal-soft);}
+    .btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);background:var(--teal-soft); box-shadow: var(--shadow-glow-teal);}
     .hero-meta{
       display:flex;flex-wrap:wrap;gap:var(--s6);
       margin-top:var(--s10);
@@ -237,24 +275,25 @@
       margin-bottom:var(--s1);
     }
     .hero-meta-item strong{
-      font-size:var(--text-sm);color:var(--text-hi);font-weight:600;
+      font-size:var(--text-sm);color:var(--teal);font-weight:600; text-shadow: 0 0 8px rgba(0,240,255,0.3);
     }
 
-    /* ─── IDENTITY CARD ─── */
+    /* ─── IDENTITY CARD (GLASSMORPHISM) ─── */
     .id-card{
       position:relative;
       background:var(--surface-2);
-      border:1px solid var(--border);
+      backdrop-filter: var(--glass-blur);
+      border:1px solid var(--border-bright);
       border-radius:var(--r-xl);
       padding:clamp(var(--s6),3.5vw,var(--s10));
-      box-shadow:var(--shadow-card),var(--shadow-glow-teal);
+      box-shadow:var(--shadow-card), var(--shadow-glow-teal), inset 0 0 30px rgba(0,240,255,0.05);
       overflow:hidden;
     }
     .id-card::before{
       content:'';position:absolute;inset:0;
       background:
-        radial-gradient(ellipse 80% 50% at top left, rgba(40,205,216,.09), transparent),
-        radial-gradient(ellipse 60% 40% at bottom right, rgba(240,163,44,.06), transparent);
+        radial-gradient(ellipse 80% 50% at top left, rgba(0,240,255,.15), transparent),
+        radial-gradient(ellipse 60% 40% at bottom right, rgba(217,70,239,.1), transparent);
       pointer-events:none;
     }
     .id-card-top{
@@ -263,40 +302,54 @@
       padding-bottom:var(--s4);
       border-bottom:1px solid var(--border);
     }
-    .avatar{
-      width:3.8rem;height:3.8rem;border-radius:1rem;
-      background:linear-gradient(135deg,var(--teal),rgba(40,205,216,.4));
-      display:grid;place-items:center;
-      font-family:var(--font-display);font-size:1.3rem;font-weight:800;
-      color:#0a1214;box-shadow:0 0 20px rgba(40,205,216,.25);
-      letter-spacing:-.03em;
+    /* AI Avatar Badge */
+    .avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--teal);
+      background: rgba(0,240,255,0.05);
+      border: 2px solid var(--teal);
+      box-shadow: 0 0 20px rgba(0,240,255,0.4), inset 0 0 15px rgba(0,240,255,0.2);
+      text-shadow: 0 0 10px var(--teal);
+      flex-shrink: 0;
     }
     .id-status{
       display:inline-flex;align-items:center;gap:var(--s2);
       padding:.4rem .8rem;border-radius:var(--r-full);
-      background:var(--success-dim);
-      border:1px solid rgba(63,212,126,.25);
+      background:rgba(16, 185, 129, 0.1);
+      border:1px solid rgba(16, 185, 129, 0.4);
       font-family:var(--font-mono);font-size:var(--text-xs);
       color:var(--success);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
     }
     .id-status .dot{
       width:.45rem;height:.45rem;border-radius:50%;background:var(--success);
+      box-shadow: 0 0 8px var(--success);
       animation:pulse-dot 2s ease infinite;
     }
-    .id-card h2{font-size:var(--text-xl);margin-bottom:var(--s2);}
+    .id-card h2{font-size:var(--text-xl);margin-bottom:var(--s2); text-shadow: 0 0 10px rgba(255,255,255,0.2);}
     .id-card .role{
-      font-size:var(--text-sm);color:var(--teal);
+      font-size:var(--text-sm);color:var(--amber);
       font-family:var(--font-mono);margin-bottom:var(--s5);letter-spacing:.03em;
+      text-shadow: 0 0 8px rgba(217,70,239,0.4);
     }
     .id-spec-list{list-style:none;display:grid;gap:var(--s3);margin-top:var(--s5);}
     .id-spec-list li{
       display:flex;align-items:flex-start;gap:var(--s3);
-      font-size:var(--text-sm);color:var(--text-mid);
+      font-size:var(--text-sm);color:var(--text-hi);
     }
     .spec-icon{
       width:1.8rem;height:1.8rem;flex-shrink:0;
       display:grid;place-items:center;border-radius:.5rem;
-      border:1px solid var(--border);background:var(--surface-3);color:var(--teal);
+      border:1px solid var(--border-bright);background:var(--surface-3);color:var(--teal);
+      box-shadow: 0 0 10px rgba(0,240,255,0.2);
     }
     .spec-icon svg{width:1rem;height:1rem;}
 
@@ -308,22 +361,26 @@
     }
     .stat{
       background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
       border:1px solid var(--border);
       border-radius:var(--r-lg);
       padding:var(--s5);
       position:relative;overflow:hidden;
+      box-shadow: var(--shadow-card);
     }
     .stat::after{
       content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
       background:linear-gradient(90deg,var(--teal),transparent);
+      box-shadow: 0 0 10px var(--teal);
     }
     .stat-num{
       font-family:var(--font-display);
       font-size:clamp(2rem,1.5rem+2vw,3rem);
       font-weight:800;color:var(--teal);
       line-height:1;margin-bottom:var(--s2);letter-spacing:-.04em;
+      text-shadow: 0 0 15px rgba(0,240,255,0.4);
     }
-    .stat-label{font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);letter-spacing:.1em;text-transform:uppercase;}
+    .stat-label{font-size:var(--text-xs);color:var(--text-mid);font-family:var(--font-mono);letter-spacing:.1em;text-transform:uppercase;}
 
     /* ─── SECTION HEADS ─── */
     .section-head{margin-bottom:var(--s10);}
@@ -332,43 +389,60 @@
 
     /* ─── CARDS (generic) ─── */
     .card{
-      background:var(--surface);
+      background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
       border:1px solid var(--border);
       border-radius:var(--r-lg);
       padding:clamp(var(--s5),2.5vw,var(--s8));
       transition:border-color var(--tr),box-shadow var(--tr),transform var(--tr);
+      box-shadow: var(--shadow-card);
     }
-    .card:hover{border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal);}
-    .card h3{font-size:var(--text-lg);margin-bottom:var(--s3);}
+    .card:hover{border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal); transform:translateY(-2px);}
+    .card h3{font-size:var(--text-lg);margin-bottom:var(--s3); color:var(--hi);}
 
     /* ─── TAG / CHIP ─── */
     .tag{
       display:inline-flex;align-items:center;padding:.35rem .75rem;
       border-radius:var(--r-full);
-      border:1px solid var(--border);
+      border:1px solid var(--border-bright);
       background:var(--teal-soft);
       font-size:var(--text-xs);color:var(--teal);
       font-family:var(--font-mono);letter-spacing:.05em;font-weight:700;
+      box-shadow: 0 0 10px rgba(0,240,255,0.1);
     }
-    .tag.amber{border-color:rgba(240,163,44,.25);background:var(--amber-dim);color:var(--amber);}
-    .tag.green{border-color:rgba(63,212,126,.22);background:var(--success-dim);color:var(--success);}
+    .tag.amber{border-color:rgba(217,70,239,.4);background:var(--amber-dim);color:var(--amber); box-shadow: 0 0 10px rgba(217,70,239,0.1);}
+    .tag.green{border-color:rgba(16,185,129,.4);background:var(--success-dim);color:var(--success); box-shadow: 0 0 10px rgba(16,185,129,0.1);}
     .tags{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5);}
 
     /* ─── PROJECT CARDS ─── */
     .project-card{
       background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
       border:1px solid var(--border);
       border-radius:var(--r-xl);
       padding:clamp(var(--s6),3vw,var(--s8));
       display:flex;flex-direction:column;gap:var(--s6);
-      transition:border-color var(--tr),box-shadow var(--tr),transform var(--tr);
+      transition:all var(--tr);
+      box-shadow: var(--shadow-card);
+      position:relative;
+      overflow:hidden;
     }
-    .project-card:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:var(--shadow-glow-teal);}
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+      opacity: 0;
+      transition: opacity var(--tr);
+    }
+    .project-card:hover{border-color:var(--border-bright);transform:translateY(-4px);box-shadow:var(--shadow-glow-teal), var(--shadow-card);}
+    .project-card:hover::before { opacity: 1; }
     .project-icon{
       width:3.2rem;height:3.2rem;border-radius:var(--r-md);
       display:grid;place-items:center;
       border:1px solid var(--border-bright);
       background:var(--teal-soft);color:var(--teal);
+      box-shadow: inset 0 0 15px rgba(0,240,255,0.2);
     }
     .project-card h3{font-size:var(--text-lg);margin-bottom:var(--s2);}
     .project-card p{font-size:var(--text-sm);}
@@ -379,7 +453,7 @@
     }
     .project-type{
       font-family:var(--font-mono);font-size:var(--text-xs);
-      color:var(--text-lo);letter-spacing:.1em;text-transform:uppercase;
+      color:var(--text-mid);letter-spacing:.1em;text-transform:uppercase;
     }
 
     /* ─── SKILL CARDS ─── */
@@ -388,6 +462,7 @@
       display:grid;place-items:center;
       color:var(--teal);margin-bottom:var(--s4);
       background:var(--teal-soft);border:1px solid var(--border-bright);
+      box-shadow: 0 0 15px rgba(0,240,255,0.2);
     }
     .skill-bar{
       height:3px;background:var(--surface-3);border-radius:var(--r-full);
@@ -395,7 +470,8 @@
     }
     .skill-bar-fill{
       height:100%;border-radius:var(--r-full);
-      background:linear-gradient(90deg,var(--teal),rgba(40,205,216,.5));
+      background:linear-gradient(90deg,var(--teal),#ffffff);
+      box-shadow: 0 0 10px var(--teal);
       transform-origin:left;transform:scaleX(0);
       transition:transform 1.2s var(--ease-spring);
     }
@@ -404,18 +480,20 @@
     .timeline{display:grid;gap:var(--s5);}
     .tl-card{
       background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
       border:1px solid var(--border);
       border-left:3px solid var(--teal);
       border-radius:0 var(--r-lg) var(--r-lg) 0;
       padding:clamp(var(--s5),3vw,var(--s8));
       position:relative;
+      box-shadow: var(--shadow-card);
     }
     .tl-meta{
       display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;
-      font-family:var(--font-mono);font-size:var(--text-xs);color:var(--text-lo);
+      font-family:var(--font-mono);font-size:var(--text-xs);color:var(--text-mid);
       text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--s3);
     }
-    .tl-company{color:var(--amber);}
+    .tl-company{color:var(--amber); text-shadow: 0 0 8px rgba(217,70,239,0.4);}
     .tl-card h3{font-size:var(--text-lg);margin-bottom:var(--s3);}
 
     /* ─── CODE BLOCK accent ─── */
@@ -425,14 +503,15 @@
       border:1px solid var(--border);
       border-radius:var(--r-md);
       padding:var(--s4) var(--s5);
-      color:var(--text-mid);
+      color:var(--text-hi);
       overflow-x:auto;
       line-height:1.8;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
     }
-    .code-accent .k{color:var(--teal);}
-    .code-accent .s{color:var(--amber);}
+    .code-accent .k{color:var(--amber);}
+    .code-accent .s{color:var(--success);}
     .code-accent .c{color:var(--text-lo);}
-    .code-accent .t{color:#b48ead;}
+    .code-accent .t{color:var(--teal);}
 
     /* ─── CONTACT ─── */
     .contact-grid{
@@ -443,28 +522,30 @@
       display:flex;align-items:center;gap:var(--s4);
       padding:var(--s4) var(--s5);
       border:1px solid var(--border);border-radius:var(--r-lg);
-      transition:border-color var(--tr),background var(--tr),transform var(--tr);
+      transition:all var(--tr);
       background:var(--surface-2);
+      backdrop-filter: var(--glass-blur);
     }
-    .contact-link:hover{border-color:var(--border-bright);background:var(--teal-soft);transform:translateX(4px);}
+    .contact-link:hover{border-color:var(--border-bright);background:var(--teal-soft);transform:translateX(4px); box-shadow: var(--shadow-glow-teal);}
     .contact-link-icon{
       width:2.8rem;height:2.8rem;flex-shrink:0;
       display:grid;place-items:center;border-radius:var(--r-md);
       background:var(--teal-soft);border:1px solid var(--border-bright);color:var(--teal);
     }
     .contact-link-label{font-size:var(--text-sm);color:var(--text-hi);font-weight:600;}
-    .contact-link-sub{font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);}
+    .contact-link-sub{font-size:var(--text-xs);color:var(--text-mid);font-family:var(--font-mono);}
 
     /* ─── FOOTER ─── */
     footer{
       padding-block:var(--s8);
       border-top:1px solid var(--border);
       font-size:var(--text-xs);color:var(--text-lo);font-family:var(--font-mono);
+      background: rgba(2, 2, 3, 0.8);
     }
     .footer-wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;}
 
     /* ─── DIVIDER ─── */
-    .divider{height:1px;background:var(--border);margin-block:0;}
+    .divider{height:1px;background:var(--border);margin-block:0; box-shadow: 0 0 10px rgba(0,240,255,0.2);}
 
     /* ─── SCROLL REVEALS ─── */
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease-spring),transform .7s var(--ease-spring);}
@@ -498,28 +579,174 @@
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
     }
+
+    /* ─── ADVANCED CHATBOT (MAIL COMPOSER) ─── */
+    .chatbot-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 340px;
+      background: var(--surface-2);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-card), var(--shadow-glow-teal);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.5s var(--ease-spring), transform 0.5s var(--ease-spring);
+    }
+    .chatbot-container.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .chatbot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--s3) var(--s4);
+      background: var(--surface-3);
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      color: var(--teal);
+      text-shadow: 0 0 8px rgba(0,240,255,0.4);
+    }
+    .chatbot-header span { display: flex; align-items: center; gap: var(--s2); }
+    .chatbot-header button { transition: color var(--tr); color: var(--text-mid); }
+    .chatbot-header button:hover { color: var(--danger); text-shadow: 0 0 8px var(--danger); }
+    
+    .chatbot-body {
+      padding: var(--s4);
+      max-height: 250px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s2);
+    }
+    .bot-msg {
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      padding: var(--s2) var(--s3);
+      border-radius: var(--r-md);
+      border-top-left-radius: 0;
+      font-size: var(--text-sm);
+      color: var(--text-hi);
+      width: fit-content;
+      max-width: 90%;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+    .delay-msg {
+      opacity: 0;
+      animation: chatFadeIn 0.5s forwards 0.8s;
+    }
+    .user-msg {
+      background: var(--teal-soft);
+      border: 1px solid var(--border-bright);
+      color: var(--teal);
+      padding: var(--s2) var(--s3);
+      border-radius: var(--r-md);
+      border-top-right-radius: 0;
+      font-size: var(--text-sm);
+      align-self: flex-end;
+      max-width: 90%;
+      word-break: break-word;
+      box-shadow: 0 0 10px rgba(0,240,255,0.1);
+    }
+
+    /* Stacked Form for Contact Details */
+    .chatbot-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s2);
+      padding: var(--s3);
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,0.4);
+    }
+    
+    .chatbot-form input,
+    .chatbot-form textarea {
+      width: 100%;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      color: var(--text-hi);
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--r-sm);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      outline: none;
+      transition: all var(--tr);
+    }
+    
+    .chatbot-form textarea {
+      resize: vertical;
+      min-height: 60px;
+      max-height: 120px;
+    }
+
+    .chatbot-form input:focus,
+    .chatbot-form textarea:focus { 
+      border-color: var(--teal); 
+      box-shadow: 0 0 10px rgba(0,240,255,0.2); 
+    }
+    
+    .chatbot-form input::placeholder,
+    .chatbot-form textarea::placeholder {
+      color: var(--text-lo);
+    }
+    
+    .btn-submit-chat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--s2);
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: var(--s1);
+      border-radius: var(--r-sm);
+      background: var(--teal-soft);
+      border: 1px solid var(--border-bright);
+      color: var(--teal);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all var(--tr);
+    }
+    .btn-submit-chat:hover {
+      background: var(--teal-dim);
+      box-shadow: var(--shadow-glow-teal);
+    }
+    
+    @keyframes chatFadeIn { to { opacity: 1; } }
+    @media(max-width: 700px) {
+      .chatbot-container { bottom: 1rem; right: 1rem; width: calc(100% - 2rem); }
+    }
   </style>
 </head>
 <body>
 
-<!-- CAD grid canvas -->
 <canvas id="cad-bg" aria-hidden="true"></canvas>
 
-<!-- Skip link -->
-<a href="#main" style="position:absolute;top:-40px;left:1rem;background:var(--teal);color:#0a1214;padding:.5rem 1rem;border-radius:var(--r-sm);z-index:100;font-weight:700;font-size:var(--text-sm);" onfocus="this.style.top='1rem'" onblur="this.style.top='-40px'">Skip to content</a>
+<a href="#main" style="position:absolute;top:-40px;left:1rem;background:var(--teal);color:#020203;padding:.5rem 1rem;border-radius:var(--r-sm);z-index:100;font-weight:700;font-size:var(--text-sm);" onfocus="this.style.top='1rem'" onblur="this.style.top='-40px'">Skip to content</a>
 
-<!-- ═══ HEADER ═══ -->
 <header class="site-header" role="banner">
   <div class="wrap nav-wrap">
     <a class="brand" href="#home" aria-label="Velusamy Aiyothi — home">
       <svg class="brand-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="40" height="40" rx="10" fill="rgba(40,205,216,0.1)" stroke="rgba(40,205,216,0.3)" stroke-width="1"/>
-        <path d="M9 29L18.5 11H22L13 29H9Z" fill="#28cdd8"/>
-        <path d="M22 11H31L22.2 29H17.5L22 20.4H18.3L22 11Z" fill="#28cdd8" opacity="0.65"/>
-        <line x1="4" y1="20" x2="8" y2="20" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
-        <line x1="32" y1="20" x2="36" y2="20" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
-        <line x1="20" y1="4" x2="20" y2="8" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
-        <line x1="20" y1="32" x2="20" y2="36" stroke="rgba(40,205,216,0.4)" stroke-width="1"/>
+        <rect width="40" height="40" rx="10" fill="rgba(0,240,255,0.1)" stroke="rgba(0,240,255,0.4)" stroke-width="1.5"/>
+        <path d="M9 29L18.5 11H22L13 29H9Z" fill="#00f0ff"/>
+        <path d="M22 11H31L22.2 29H17.5L22 20.4H18.3L22 11Z" fill="#00f0ff" opacity="0.65"/>
+        <line x1="4" y1="20" x2="8" y2="20" stroke="#00f0ff" stroke-width="1.5"/>
+        <line x1="32" y1="20" x2="36" y2="20" stroke="#00f0ff" stroke-width="1.5"/>
+        <line x1="20" y1="4" x2="20" y2="8" stroke="#00f0ff" stroke-width="1.5"/>
+        <line x1="20" y1="32" x2="20" y2="36" stroke="#00f0ff" stroke-width="1.5"/>
       </svg>
       <span>Velusamy Aiyothi</span>
     </a>
@@ -543,29 +770,27 @@
   </div>
 </header>
 
-<!-- ═══ MAIN ═══ -->
 <main id="main" style="position:relative;z-index:2;">
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="wrap hero-grid">
       <div>
         <div class="hero-badge">
           <span class="dot" aria-hidden="true"></span>
-          Available · Lead CAD Developer · Chennai
+          System Online · Lead CAD Developer
         </div>
         <h1>
-          CAD automation<br>that <span class="accent">engineers</span><br>can trust.
+          Intelligent <br><span class="accent typing-text">CAD Automation.</span>
         </h1>
-        <p class="lead">I build SolidWorks add-ins, quality control workflows, and enterprise desktop tools that turn complex CAD validation into reliable, fast software products.</p>
+        <p class="lead">Bridging the gap between traditional CAD APIs and modern AI toolsets. I build enterprise SolidWorks add-ins and intelligent data pipelines that eliminate repetitive engineering.</p>
         <div class="hero-actions">
           <a class="btn-primary" href="#contact">
-            <i data-lucide="send" style="width:16px;height:16px;" aria-hidden="true"></i>
-            Start a conversation
+            <i data-lucide="zap" style="width:16px;height:16px;" aria-hidden="true"></i>
+            Initialize Contact
           </a>
           <a class="btn-outline" href="#work">
             <i data-lucide="layers" style="width:16px;height:16px;" aria-hidden="true"></i>
-            View my work
+            View Architecture
           </a>
         </div>
         <div class="hero-meta">
@@ -576,7 +801,6 @@
         </div>
       </div>
 
-      <!-- identity card -->
       <aside class="id-card reveal reveal-slow" aria-label="Profile card">
         <div class="id-card-top">
           <div class="avatar" aria-hidden="true">VA</div>
@@ -586,30 +810,29 @@
           </span>
         </div>
         <h2>Velusamy Aiyothi</h2>
-        <p class="role">// Lead CAD Developer &amp; Automation Engineer</p>
-        <p style="font-size:var(--text-sm);">Building enterprise-grade SolidWorks products with deep CAD API knowledge and production-focused C# and WPF software engineering.</p>
+        <p class="role">>&nbsp;Lead CAD Developer &amp; Automation Engineer</p>
+        <p style="font-size:var(--text-sm); color:var(--text-mid);">Building enterprise-grade SolidWorks products with deep CAD API knowledge and production-focused C# and WPF software engineering.</p>
         <ul class="id-spec-list">
           <li>
             <span class="spec-icon"><i data-lucide="cpu" aria-hidden="true"></i></span>
-            SolidWorks API — add-ins,assembly, part & drawing automation, BOM workflows
+            SolidWorks API — add-ins, assembly, part & drawing automation
           </li>
           <li>
-            <span class="spec-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
+            <span class="spec-icon"><i data-lucide="layout-template" aria-hidden="true"></i></span>
             WPF / MVVM desktop products with MahApps.Metro theming
           </li>
           <li>
-            <span class="spec-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span>
-            AI-Driven Data Exchange, GD&amp;T
+            <span class="spec-icon"><i data-lucide="brain-circuit" aria-hidden="true"></i></span>
+            AI-Driven Data Exchange & GD&amp;T validation workflows
           </li>
           <li>
-            <span class="spec-icon"><i data-lucide="terminal" aria-hidden="true"></i></span>
-            C# .NET, multi-project architectures, batch processing systems
+            <span class="spec-icon"><i data-lucide="terminal-square" aria-hidden="true"></i></span>
+            C# .NET, multi-project architectures, batch processing
           </li>
         </ul>
       </aside>
     </div>
 
-    <!-- stats bar -->
     <div class="wrap stats-bar" role="list" aria-label="Key statistics">
       <article class="stat reveal" data-delay="1" role="listitem">
         <div class="stat-num">9+</div>
@@ -624,83 +847,94 @@
         <div class="stat-label">Desktop UI stack</div>
       </article>
       <article class="stat reveal" data-delay="4" role="listitem">
-        <div class="stat-num">CAD APIs</div>
-        <div class="stat-label">Solidworks - Inventor -  AutoCad  - Rhino</div>
+        <div class="stat-num">APIs</div>
+        <div class="stat-label">Solidworks · Inventor · AutoCad</div>
       </article>
     </div>
   </section>
 
   <hr class="divider"/>
 
-  <!-- ABOUT -->
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">About</span>
+        <span class="eyebrow">About Core Framework</span>
         <h2>Built at the edge of mechanical design and software engineering.</h2>
         <p>I focus on the intersection where real engineering requirements meet scalable software. My work has always been about making CAD-dependent teams faster, more confident, and better supported by the tools they rely on.</p>
       </div>
 
       <div class="grid-2">
         <article class="card reveal" data-delay="1">
-          <h3>My approach</h3>
-          <p>I treat every CAD automation project as a product problem: understanding the user's workflow first, then designing solutions that reduce manual work without creating new friction.</p>
+          <h3>Algorithm & Approach</h3>
+          <p>I treat every CAD automation project as a product problem. I map the user's manual workflow step-by-step, identify friction points, and engineer intelligent solutions that eliminate repetitive tasks while strictly preserving engineering intent.</p>
           <ul style="list-style:none;display:grid;gap:var(--s4);margin-top:var(--s6);">
+            
             <li style="display:flex;align-items:flex-start;gap:var(--s3);">
-              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <i data-lucide="check-square" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Domain-first thinking</strong>
-                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Understanding CAD workflows deeply before writing any code.</p>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Domain-First Logic</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Before writing a single line of code, I deeply analyze the mechanical design process. I ensure the software natively understands GD&T standards, assembly logic, and manufacturing realities.</p>
               </div>
             </li>
+            
             <li style="display:flex;align-items:flex-start;gap:var(--s3);">
-              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <i data-lucide="check-square" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Commercial-grade delivery</strong>
-                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Architecture, UI quality, reliability, and real-world edge cases — all matter.</p>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Commercial-Grade Delivery</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">I don't just write scripts; I build scalable enterprise applications. My focus spans clean C# MVVM architecture, intuitive WPF interfaces, and bulletproof error handling for zero downtime.</p>
               </div>
             </li>
+            
             <li style="display:flex;align-items:flex-start;gap:var(--s3);">
-              <i data-lucide="check-circle-2" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <i data-lucide="check-square" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Persistence on hard problems</strong>
-                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Complex API bugs, unstable states, and edge cases are where I'm most effective.</p>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">Complex Problem Resolution</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">CAD APIs are notoriously volatile. I specialize in navigating undocumented behaviors, managing memory leaks in batch processes, and engineering reliable workarounds where standard methods fail.</p>
               </div>
             </li>
+
+            <li style="display:flex;align-items:flex-start;gap:var(--s3);">
+              <i data-lucide="check-square" style="color:var(--teal);width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.2rem;" aria-hidden="true"></i>
+              <div>
+                <strong style="color:var(--text-hi);font-size:var(--text-sm);">High-Performance Execution</strong>
+                <p style="font-size:var(--text-sm);margin-top:var(--s1);">Optimizing algorithmic complexity for massive datasets. Whether traversing a 10,000-part assembly or generating hundreds of drawings, I engineer pipelines built for maximum speed and stability.</p>
+              </div>
+            </li>
+
           </ul>
         </article>
-
+         
+       
         <div style="display:grid;gap:var(--s5);">
           <article class="card reveal" data-delay="2">
-            <h3>Core specializations</h3>
+            <h3>Core Node Specializations</h3>
             <div class="tags">
               <span class="tag">SolidWorks API</span>
               <span class="tag">Inventor API</span>
               <span class="tag">AutoCAD API</span>
               <span class="tag">Rhino API</span>
-              <span class="tag">Quality control</span>
-              <span class="tag">Assembly - Part - Drawing Automation</span>
+              <span class="tag">Quality Control Frameworks</span>
+              <span class="tag">Assembly & Part Automation</span>
               <span class="tag amber">WPF / XAML</span>
-              <span class="tag amber">MVVM</span>
-              <span class="tag amber">C# .NET</span>
-              <span class="tag green">Batch processing</span>
-              <span class="tag green">Changemanagement</span>
-              <span class="tag green">GD&amp;T validation</span>
-              <span class="tag green">MahApps.Metro</span>
+              <span class="tag amber">MVVM Design Pattern</span>
+              <span class="tag amber">C# .NET Core</span>
+              <span class="tag green">Batch Pipeline Processing</span>
+              <span class="tag green">GD&amp;T Validation</span>
+              <span class="tag green">MahApps.Metro UI</span>
             </div>
           </article>
           <article class="card reveal" data-delay="3">
-  <h3>Code snapshot</h3>
-  <pre class="code-accent"><code><span class="c">// SOLIDWORKS AI Automate Add-In</span>
+  <h3>Code Terminal Snapshot</h3>
+  <pre class="code-accent"><code><span class="c">// SOLIDWORKS AI Automate Add-In Module</span>
 
 <span class="k">[Title</span>(<span class="s">"SW Add-In"</span>)] 
-<span class="k">[Description</span>(<span class="s">"Sample 'AI Automate' SOLIDWORKS add-in"</span>)] 
+<span class="k">[Description</span>(<span class="s">"Sample 'AI Automate' SOLIDWORKS integration"</span>)] 
 <span class="k">[ComVisible</span>(<span class="k">true</span>), <span class="k">Guid</span>(<span class="s">"31B803E0-7A01-4841-A0DE-895B726625C9"</span>)]
 <span class="k">public class</span> <span class="t">MySampleAddIn</span> : <span class="t">SwAddInEx</span>
 {
-    <span class="k">public override void</span> <span class="m">OnConnect</span>()
+    <span class="k">public override void</span> <span class="t">OnConnect</span>()
     {
-        <span class="t">Application</span>.<span class="m">ShowMessageBox</span>(<span class="s">"AI Automate!"</span>);
+        <span class="t">Application</span>.<span class="t">ShowMessageBox</span>(<span class="s">"Neural Interface Connected!"</span>);
     }
 }</code></pre>
 </article>
@@ -711,32 +945,31 @@
 
   <hr class="divider"/>
 
-  <!-- WORK -->
   <section class="section" id="work">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Selected work</span>
-        <h2>Systems designed for scale, precision, and usability.</h2>
-        <p>A selection of the types of tools and systems I build — each solving a real engineering workflow problem with reliable, maintainable software.</p>
+        <span class="eyebrow">Deployed Systems</span>
+        <h2>Architectures designed for scale, precision, and usability.</h2>
+        <p>A selection of the platforms and systems I build — each solving a real engineering workflow problem with intelligent, maintainable software.</p>
       </div>
 
       <div class="grid-3">
         <article class="project-card reveal" data-delay="1">
           <header>
             <div class="project-icon" aria-hidden="true">
-              <i data-lucide="shield-check" style="width:1.4rem;height:1.4rem;"></i>
+              <i data-lucide="microchip" style="width:1.4rem;height:1.4rem;"></i>
             </div>
-            <h3>Enterprise Features platform</h3>
-            <p>Real-time validation for SolidWorks parts, assemblies, and drawings Exclusion Simplification Options, Metadata Information.</p>
+            <h3>SolidWorks AI Automation</h3>
+            <p>A production-grade commercial WPF desktop application built to enforce rigorous engineering standards. Automates complex quality control validation directly within the SolidWorks environment.</p>
           </header>
           <div>
             <div class="tags">
               <span class="tag">SolidWorks API</span>
               <span class="tag">C# .NET</span>
-              <span class="tag amber">WPF</span>
+              <span class="tag amber">WPF / MVVM</span>
             </div>
             <div class="project-bottom">
-              <span class="project-type">Desktop Add-in</span>
+              <span class="project-type">Commercial App</span>
               <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
             </div>
           </div>
@@ -745,19 +978,19 @@
         <article class="project-card reveal" data-delay="2">
           <header>
             <div class="project-icon" aria-hidden="true">
-              <i data-lucide="file-cog" style="width:1.4rem;height:1.4rem;"></i>
+              <i data-lucide="network" style="width:1.4rem;height:1.4rem;"></i>
             </div>
-            <h3>Drawing &amp; BOM automation</h3>
-            <p>Automated drawing generation and BOM extraction workflows. Eliminates repetitive drafting, enforces standards, and outputs consistent documentation across model sets.</p>
+            <h3>CAD Automtation</h3>
+            <p>Architected the technical roadmap for a specialized CAD platform. Designed to ecosystems using a proprietary.</p>
           </header>
           <div>
             <div class="tags">
-              <span class="tag">Drawing API</span>
-              <span class="tag">BOM workflows</span>
-              <span class="tag green">Automation</span>
+              <span class="tag">Interoperability</span>
+              <span class="tag">POC</span>
+              <span class="tag green">Startup Concept</span>
             </div>
             <div class="project-bottom">
-              <span class="project-type">CAD Automation</span>
+              <span class="project-type">Platform Architecture</span>
               <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
             </div>
           </div>
@@ -766,19 +999,19 @@
         <article class="project-card reveal" data-delay="3">
           <header>
             <div class="project-icon" aria-hidden="true">
-              <i data-lucide="server" style="width:1.4rem;height:1.4rem;"></i>
+              <i data-lucide="brain" style="width:1.4rem;height:1.4rem;"></i>
             </div>
-            <h3>Batch validation pipeline</h3>
-            <p>Multi-file processing system that runs quality checks at scale across project libraries. Surfaces issues fast with structured output and supports large dataset review without manual intervention.</p>
+            <h3>AI-Integrated Workflows</h3>
+            <p>Recognized for AI Fluency via Microsoft Learn. Actively researching and applying artificial intelligence and machine learning models to accelerate 3D model processing, generative geometry, and code generation.</p>
           </header>
           <div>
             <div class="tags">
-              <span class="tag">Batch processing</span>
-              <span class="tag amber">Pipeline design</span>
-              <span class="tag green">File validation</span>
+              <span class="tag">AI Integration</span>
+              <span class="tag amber">Workflow Automation</span>
+              <span class="tag green">Microsoft Certified</span>
             </div>
             <div class="project-bottom">
-              <span class="project-type">Processing System</span>
+              <span class="project-type">Applied Research</span>
               <i data-lucide="arrow-up-right" style="color:var(--teal);width:1.1rem;height:1.1rem;" aria-hidden="true"></i>
             </div>
           </div>
@@ -789,13 +1022,12 @@
 
   <hr class="divider"/>
 
-  <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Technical skills</span>
-        <h2>Deep specialization across CAD and desktop engineering.</h2>
-        <p>I am strongest at the intersection of CAD domain knowledge, Windows desktop architecture, and real-world QC automation engineering.</p>
+        <span class="eyebrow">Technical Matrix</span>
+        <h2>Deep specialization across CAD and advanced desktop engineering.</h2>
+        <p>I operate effectively at the intersection of CAD domain knowledge, Windows desktop architecture, and intelligent QC automation engineering.</p>
       </div>
 
       <div class="grid-3">
@@ -810,26 +1042,26 @@
 
         <article class="card reveal skill-card-item" data-delay="2" data-fill="0.93">
           <div class="skill-icon" aria-hidden="true"><i data-lucide="code-2" style="width:1.4rem;height:1.4rem;"></i></div>
-          <h3>C# / .NET</h3>
-          <p style="font-size:var(--text-sm);">Object-oriented architecture, async patterns, multi-project solutions, service layers, and production-quality Windows application delivery.</p>
+          <h3>C# / .NET Core</h3>
+          <p style="font-size:var(--text-sm);">Object-oriented architecture, async patterns, multi-project solutions, service layers, and enterprise Windows application delivery.</p>
           <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="C# .NET proficiency 93%">
             <div class="skill-bar-fill" style="width:93%;"></div>
           </div>
         </article>
 
         <article class="card reveal skill-card-item" data-delay="3" data-fill="0.90">
-          <div class="skill-icon" aria-hidden="true"><i data-lucide="layout" style="width:1.4rem;height:1.4rem;"></i></div>
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="layout-panel-left" style="width:1.4rem;height:1.4rem;"></i></div>
           <h3>WPF / XAML</h3>
-          <p style="font-size:var(--text-sm);">Rich desktop UI with MVVM patterns, custom controls, MahApps.Metro theming, data binding, and state management for complex CAD workflows.</p>
+          <p style="font-size:var(--text-sm);">Rich desktop UI with MVVM patterns, custom controls, MahApps.Metro theming, data binding, and state management.</p>
           <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="WPF / XAML proficiency 90%">
             <div class="skill-bar-fill" style="width:90%;"></div>
           </div>
         </article>
 
         <article class="card reveal skill-card-item" data-delay="1" data-fill="0.92">
-          <div class="skill-icon" aria-hidden="true"><i data-lucide="shield" style="width:1.4rem;height:1.4rem;"></i></div>
-          <h3>CAD Automation</h3>
-          <p style="font-size:var(--text-sm);">Designing and building automation engines for SolidWorks parts, assemblies, and drawings — including QC rules, GD&amp;T validation, and custom property workflows.</p>
+          <div class="skill-icon" aria-hidden="true"><i data-lucide="shield-check" style="width:1.4rem;height:1.4rem;"></i></div>
+          <h3>CAD Automation Logic</h3>
+          <p style="font-size:var(--text-sm);">Designing engines for SolidWorks parts, assemblies, and drawings — including QC rules, GD&amp;T validation, and metadata extraction.</p>
           <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="QC automation proficiency 92%">
             <div class="skill-bar-fill" style="width:92%;"></div>
           </div>
@@ -837,7 +1069,7 @@
 
         <article class="card reveal skill-card-item" data-delay="2" data-fill="0.85">
           <div class="skill-icon" aria-hidden="true"><i data-lucide="git-merge" style="width:1.4rem;height:1.4rem;"></i></div>
-          <h3>Enterprise architecture</h3>
+          <h3>Enterprise Architecture</h3>
           <p style="font-size:var(--text-sm);">Multi-project solution design, dependency injection, service patterns, license system integration, and extensible plugin frameworks.</p>
           <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Enterprise architecture proficiency 85%">
             <div class="skill-bar-fill" style="width:85%;"></div>
@@ -846,7 +1078,7 @@
 
         <article class="card reveal skill-card-item" data-delay="3" data-fill="0.80">
           <div class="skill-icon" aria-hidden="true"><i data-lucide="database" style="width:1.4rem;height:1.4rem;"></i></div>
-          <h3>Batch &amp; workflow systems</h3>
+          <h3>Batch Pipeline Systems</h3>
           <p style="font-size:var(--text-sm);">Automated multi-file CAD processing, result aggregation, PDF export pipelines, and reporting systems for QC validation at scale.</p>
           <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Batch systems proficiency 80%">
             <div class="skill-bar-fill" style="width:80%;"></div>
@@ -858,13 +1090,12 @@
 
   <hr class="divider"/>
 
-  <!-- EXPERIENCE -->
   <section class="section" id="experience">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Experience</span>
+        <span class="eyebrow">Career Timeline</span>
         <h2>From implementation specialist to technical lead.</h2>
-        <p>Consistent growth in CAD specialization, product ownership, and architectural responsibility across two companies and 9+ years.</p>
+        <p>Consistent growth in CAD specialization, product ownership, and architectural responsibility.</p>
       </div>
 
       <div class="timeline">
@@ -886,10 +1117,10 @@
         <article class="tl-card reveal" data-delay="2">
           <div class="tl-meta">
             <span>Dec 2017 — Mar 2026 </span>
-            <span class="tl-company">Srinsoft Inc, </span>
+            <span class="tl-company">Srinsoft Inc</span>
           </div>
-          <h3>Associate Technical lead</h3>
-          <p style="font-size:var(--text-sm);">Built solid foundations in CAD API customization, add-in development, and Windows desktop workflows. Grew from implementation contributor to lead developer on multiple engineering automation projects.</p>
+          <h3>Associate Technical Lead</h3>
+          <p style="font-size:var(--text-sm);">Built solid foundations in CAD API customization, add-in development, and Windows desktop workflows. Grew from implementation contributor to lead developer on multiple engineering automation projects over 8 years.</p>
           <div class="tags" style="margin-top:var(--s5);">
             <span class="tag">CAD customization</span>
             <span class="tag amber">WPF UI</span>
@@ -902,14 +1133,13 @@
 
   <hr class="divider"/>
 
-  <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="wrap contact-grid">
       <div>
         <div class="section-head reveal" style="margin-bottom:0;">
-          <span class="eyebrow">Contact</span>
+          <span class="eyebrow">Establish Connection</span>
           <h2>Open to the right CAD automation opportunity.</h2>
-          <p>Whether it's a new SolidWorks product, a quality control framework, a complex add-in, or just a conversation about engineering automation — I'm interested. Let's talk.</p>
+          <p>Whether it's a new SolidWorks product, a framework, a complex add-in, or just a conversation about engineering automation — I'm interested. Use the terminal chat or the links below to connect.</p>
           <div style="margin-top:var(--s8);display:grid;gap:var(--s4);">
             <a class="contact-link" href="mailto:velusamyaiyothi@gmail.com">
               <span class="contact-link-icon">
@@ -924,43 +1154,43 @@
               <span class="contact-link-icon"><i data-lucide="linkedin" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i></span>
               <div>
                 <div class="contact-link-label">LinkedIn</div>
-                <div class="contact-link-sub">linkedin.com/in/velusamy-ayothi-2b03a1184</div>
+                <div class="contact-link-sub">linkedin.com/in/velusamy-ayothi</div>
               </div>
               <i data-lucide="arrow-right" style="color:var(--teal);width:1rem;height:1rem;margin-left:auto;" aria-hidden="true"></i>
             </a>
           
-            <a class="contact-link" href="#home">
+            <div class="contact-link" style="cursor:default;">
               <span class="contact-link-icon"><i data-lucide="map-pin" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i></span>
               <div>
-                <div class="contact-link-label">Location</div>
+                <div class="contact-link-label">Location Node</div>
                 <div class="contact-link-sub">Chennai, Tamil Nadu, India</div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <article class="card reveal reveal-slow" style="background:var(--surface-2);border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal);">
-        <h3>Available for</h3>
+      <article class="card reveal reveal-slow" style="border-color:var(--border-bright);box-shadow:var(--shadow-glow-teal);">
+        <h3>System Ready For:</h3>
         <ul style="list-style:none;display:grid;gap:var(--s4);margin-top:var(--s4);">
-          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
-            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-hi);">
+            <i data-lucide="check" style="color:var(--success);width:1rem;height:1rem;flex-shrink:0;text-shadow:0 0 5px var(--success);" aria-hidden="true"></i>
             Full-time lead CAD developer roles
           </li>
-          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
-            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-hi);">
+            <i data-lucide="check" style="color:var(--success);width:1rem;height:1rem;flex-shrink:0;text-shadow:0 0 5px var(--success);" aria-hidden="true"></i>
             Enterprise SolidWorks add-in projects
           </li>
-          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
-            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-hi);">
+            <i data-lucide="check" style="color:var(--success);width:1rem;height:1rem;flex-shrink:0;text-shadow:0 0 5px var(--success);" aria-hidden="true"></i>
             CAD quality control platform development
           </li>
-          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
-            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-hi);">
+            <i data-lucide="check" style="color:var(--success);width:1rem;height:1rem;flex-shrink:0;text-shadow:0 0 5px var(--success);" aria-hidden="true"></i>
             WPF desktop engineering tools
           </li>
-          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-mid);">
-            <i data-lucide="check" style="color:var(--teal);width:1rem;height:1rem;flex-shrink:0;" aria-hidden="true"></i>
+          <li style="display:flex;align-items:center;gap:var(--s3);font-size:var(--text-sm);color:var(--text-hi);">
+            <i data-lucide="check" style="color:var(--success);width:1rem;height:1rem;flex-shrink:0;text-shadow:0 0 5px var(--success);" aria-hidden="true"></i>
             Multi-CAD platform automation (Inventor, AutoCAD)
           </li>
         </ul>
@@ -968,22 +1198,40 @@
     </div>
   </section>
 
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header">
+      <span><i data-lucide="terminal-square" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i> AI Contact Relay</span>
+      <button id="close-chat" aria-label="Close chat"><i data-lucide="x" style="width:1.2rem;height:1.2rem;" aria-hidden="true"></i></button>
+    </div>
+    <div class="chatbot-body" id="chat-body">
+      <p class="bot-msg">Connection established. 👋</p>
+      <p class="bot-msg delay-msg">I am an automated relay. Share your details below, and I will draft a direct email to Velusamy for you.</p>
+    </div>
+    <form class="chatbot-form" id="chat-form">
+      <input type="text" id="chat-name" placeholder="Your Name" required autocomplete="name" />
+      <input type="tel" id="chat-mobile" placeholder="Mobile Number" required autocomplete="tel" />
+      <input type="email" id="chat-email" placeholder="Email Address" required autocomplete="email" />
+      <textarea id="chat-description" placeholder="Project description or message..." required></textarea>
+      <button type="submit" class="btn-submit-chat" aria-label="Share Details">
+        <i data-lucide="send" style="width:1rem;height:1rem;" aria-hidden="true"></i> Share & Compose Mail
+      </button>
+    </form>
+  </div>
+
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap footer-wrap">
-    <span>// Velusamy Aiyothi · Lead CAD Developer · Chennai, India</span>
-    <a href="https://www.linkedin.com/in/velusamy-ayothi-2b03a1184" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">linkedin.com/in/velusamy-ayothi</a>
+    <span>// Velusamy Aiyothi · Lead CAD Developer · System Location: Chennai, India</span>
+    <a href="https://www.linkedin.com/in/velusamy-ayothi-2b03a1184" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none; text-shadow: 0 0 5px var(--teal-dim);">linkedin.com/in/velusamy-ayothi</a>
   </div>
 </footer>
 
-<!-- ═══ SCRIPTS ═══ -->
 <script>
   /* Init Lucide icons */
   document.addEventListener('DOMContentLoaded', () => { if(window.lucide) lucide.createIcons(); });
 
-  /* CAD grid canvas background */
+  /* Advanced AI Grid Canvas Background (Neural Net + Data Streams) */
   (function(){
     const canvas = document.getElementById('cad-bg');
     const ctx = canvas.getContext('2d');
@@ -991,23 +1239,37 @@
 
     const MAJOR = 80;
     const MINOR = 20;
-    const TEAL = 'rgba(40,205,216,';
-    const AMBER = 'rgba(240,163,44,';
+    const TEAL = 'rgba(0, 240, 255,'; // Cyber Cyan
+    
+    // AI Network Nodes
+    let particles = [];
+    const particleCount = 45;
 
     function resize(){
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
+      initParticles();
     }
 
-    /* animated scan */
+    function initParticles() {
+      particles = [];
+      for(let i=0; i<particleCount; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4
+        });
+      }
+    }
+
     let scanY = 0;
-    let t = 0;
 
     function drawGrid(){
       ctx.clearRect(0,0,W,H);
 
-      /* minor grid */
-      ctx.strokeStyle = TEAL+'0.045)';
+      /* Deep Cyber Grid Background */
+      ctx.strokeStyle = TEAL+'0.02)';
       ctx.lineWidth = .5;
       for(let x=0;x<W;x+=MINOR){
         ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
@@ -1016,65 +1278,50 @@
         ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
       }
 
-      /* major grid */
-      ctx.strokeStyle = TEAL+'0.09)';
-      ctx.lineWidth = .8;
-      for(let x=0;x<W;x+=MAJOR){
-        ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
-      }
-      for(let y=0;y<H;y+=MAJOR){
-        ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
-      }
+      /* Animated AI Nodes & Web Links */
+      ctx.fillStyle = TEAL+'0.6)';
+      for(let i=0; i<particles.length; i++) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        
+        // Bounce off edges gently
+        if(p.x < 0 || p.x > W) p.vx *= -1;
+        if(p.y < 0 || p.y > H) p.vy *= -1;
 
-      /* crosshair markers at major intersections */
-      ctx.strokeStyle = TEAL+'0.18)';
-      ctx.lineWidth = 1;
-      for(let x=MAJOR;x<W;x+=MAJOR){
-        for(let y=MAJOR;y<H;y+=MAJOR){
-          const sz = 5;
-          ctx.beginPath();ctx.moveTo(x-sz,y);ctx.lineTo(x+sz,y);ctx.stroke();
-          ctx.beginPath();ctx.moveTo(x,y-sz);ctx.lineTo(x,y+sz);ctx.stroke();
+        // Draw node points
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.5, 0, Math.PI*2);
+        ctx.fill();
+
+        // Connect nodes to form Neural Net web
+        for(let j=i+1; j<particles.length; j++) {
+          let p2 = particles[j];
+          let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if(dist < 130) {
+            ctx.beginPath();
+            ctx.strokeStyle = TEAL + (0.15 - (dist/130)*0.15) + ')';
+            ctx.lineWidth = 1;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
         }
       }
 
-      /* dot corners */
-      ctx.fillStyle = TEAL+'0.22)';
-      for(let x=MAJOR;x<W;x+=MAJOR){
-        for(let y=MAJOR;y<H;y+=MAJOR){
-          ctx.beginPath();ctx.arc(x,y,1.5,0,Math.PI*2);ctx.fill();
-        }
-      }
-
-      /* animated scan line */
-      const scanGrad = ctx.createLinearGradient(0,scanY-80,0,scanY+80);
-      scanGrad.addColorStop(0,'rgba(40,205,216,0)');
-      scanGrad.addColorStop(.5,'rgba(40,205,216,0.05)');
-      scanGrad.addColorStop(1,'rgba(40,205,216,0)');
+      /* Animated Terminal Scan Line Overlay */
+      const scanGrad = ctx.createLinearGradient(0,scanY-150,0,scanY+150);
+      scanGrad.addColorStop(0,'rgba(0,240,255,0)');
+      scanGrad.addColorStop(.5,'rgba(0,240,255,0.05)');
+      scanGrad.addColorStop(1,'rgba(0,240,255,0)');
       ctx.fillStyle = scanGrad;
-      ctx.fillRect(0,scanY-80,W,160);
+      ctx.fillRect(0,scanY-150,W,300);
 
-      /* horizontal scan line */
-      ctx.strokeStyle = TEAL+'0.25)';
+      ctx.strokeStyle = TEAL+'0.2)';
       ctx.lineWidth = 1;
       ctx.beginPath();ctx.moveTo(0,scanY);ctx.lineTo(W,scanY);ctx.stroke();
 
-      /* corner decorations */
-      drawCorner(40,40,1,1,TEAL);
-      drawCorner(W-40,40,-1,1,TEAL);
-      drawCorner(40,H-40,1,-1,AMBER);
-      drawCorner(W-40,H-40,-1,-1,AMBER);
-
-      scanY = (scanY + .4) % H;
-      t++;
-    }
-
-    function drawCorner(x,y,sx,sy,col){
-      const L = 24;
-      ctx.strokeStyle = col+'0.5)';
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();ctx.moveTo(x,y+sy*L);ctx.lineTo(x,y);ctx.lineTo(x+sx*L,y);ctx.stroke();
-      ctx.fillStyle = col+'0.7)';
-      ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
+      scanY = (scanY + 0.8) % H;
     }
 
     function loop(){
@@ -1087,7 +1334,7 @@
     loop();
   })();
 
-  /* Scroll reveal */
+  /* Scroll reveal logic */
   (function(){
     const els = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries=>{
@@ -1110,6 +1357,84 @@
       });
     },{threshold:.4});
     bars.forEach(b=>obs.observe(b));
+  })();
+
+  /* * Advanced Mail Composer Chatbot Logic
+   * Gathers Name, Mobile, Email, and Description
+   * and triggers default Mail Client (Outlook, Gmail app, Apple Mail, etc)
+   */
+  (function() {
+    const chatbot = document.getElementById('chatbot');
+    const closeChat = document.getElementById('close-chat');
+    const chatForm = document.getElementById('chat-form');
+    
+    // Inputs
+    const inputName = document.getElementById('chat-name');
+    const inputMobile = document.getElementById('chat-mobile');
+    const inputEmail = document.getElementById('chat-email');
+    const inputDesc = document.getElementById('chat-description');
+    const chatBody = document.getElementById('chat-body');
+
+    // Pop up the chatbot after 4 seconds of page load
+    setTimeout(() => {
+      if (chatbot) chatbot.classList.add('show');
+    }, 4000);
+
+    // Close button functionality
+    if (closeChat) {
+      closeChat.addEventListener('click', () => {
+        chatbot.classList.remove('show');
+      });
+    }
+
+    // Handle email composer submission
+    if (chatForm) {
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const nameVal = inputName.value.trim();
+        const mobileVal = inputMobile.value.trim();
+        const emailVal = inputEmail.value.trim();
+        const descVal = inputDesc.value.trim();
+
+        if(nameVal && mobileVal && emailVal && descVal) {
+          
+          // 1. Display user's action in chat
+          const userMsg = document.createElement('p');
+          userMsg.className = 'user-msg';
+          userMsg.innerHTML = `Packaging data for ${nameVal}...<br>[Mobile: ${mobileVal}]<br>[Email: ${emailVal}]<br>[Message Included]`;
+          chatBody.appendChild(userMsg);
+          chatBody.scrollTop = chatBody.scrollHeight;
+
+          // 2. Draft the email body & subject
+          const subjectText = `Portfolio Connection: ${nameVal}`;
+          const bodyText = `Hi Velusamy,\n\nI visited your portfolio and would like to connect.\n\nHere are my contact details:\nName: ${nameVal}\nMobile: ${mobileVal}\nEmail: ${emailVal}\n\nMessage / Description:\n${descVal}\n\nLooking forward to speaking with you.\n\nBest regards,\n${nameVal}`;
+          
+          // Encode for URLs
+          const encodedSubject = encodeURIComponent(subjectText);
+          const encodedBody = encodeURIComponent(bodyText);
+
+          // Trigger mailto:
+          // This tells the user's OS to open their default mail app
+          window.location.href = `mailto:velusamyaiyothi@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+
+          // 3. Clear inputs
+          inputName.value = '';
+          inputMobile.value = '';
+          inputEmail.value = '';
+          inputDesc.value = '';
+          
+          // 4. Bot confirmation reply
+          setTimeout(() => {
+            const botReply = document.createElement('p');
+            botReply.className = 'bot-msg';
+            botReply.innerHTML = "Success! I've drafted an email with your details. <strong>Please check your default mail app and hit 'Send'.</strong>";
+            chatBody.appendChild(botReply);
+            chatBody.scrollTop = chatBody.scrollHeight;
+          }, 800);
+        }
+      });
+    }
   })();
 </script>
 </body>
